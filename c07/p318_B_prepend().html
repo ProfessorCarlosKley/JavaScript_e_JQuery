@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#btn1").click(function () {
+        $("p").prepend("<b>Prepended text</b>. ");
+        //Adiciona o texto Propend text aos parágrafos encontrados
+        // antes do texto já existente.
+        //Existe uma sutilieza entre preprend e preprendTo. ver p318. 
+      });
+      $("#btn2").click(function () {
+        $("ol").prepend("<li>Prepended item</li>");
+        //prepend adiciona um item de lista à lista <ol>
+        //adiciona antes do conteúdo já existente.
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+
+  <ol>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ol>
+
+  <button id="btn1">Prepend text</button>
+  <button id="btn2">Prepend list item</button>
+
+</body>
+
+</html>

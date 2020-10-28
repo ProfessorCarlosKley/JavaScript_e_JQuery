@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            box-sizing: border-box;
+            padding: 5px;
+            width: 100%;
+            background-color: darkseagreen;
+            color: darkslategrey;
+        }
+
+        .fechar {
+            float: right;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+
+        }
+
+        .fechar:hover {
+            color: darkorange;
+        }
+
+        p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <span onclick="this.parentNode.style.display = 'none';" class="fechar">&times;</span>
+        <!--O elemento pai do span é a div... desse modo display = none
+        faz com que a div ficque invisível como todos os seus elementos.
+    Ao clicar, digo que a visibilidade da div é nula. -->
+        <p>Para fechar esse container clique no X do lado direito.</p>
+    </div>
+
+</body>
+<script>
+
+</script>
+
+</html>

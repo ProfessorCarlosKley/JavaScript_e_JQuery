@@ -1,0 +1,11 @@
+
+/*
+  Mailgun Tracking
+  A custom function that will run once mailgun subscription happens.
+  @param error
+  @param sucess
+*/
+function mailgunTracking(error, success) {
+  if (!fbq || error) return;
+  fbq('track', 'Lead');
+}

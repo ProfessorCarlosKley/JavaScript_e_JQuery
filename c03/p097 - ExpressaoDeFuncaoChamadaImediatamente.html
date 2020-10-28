@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+</head>
+  
+  <body>
+  <script>
+	//Expressao de função
+	/*Quando se coloca uma função onde o interpretador esperaria ver uma expressão, ela é
+	tratada como uma expressão.*/
+	
+	var area = (function (){
+	//area recebe uma função
+	
+	var width = 3;
+	var height = 225;
+	return width * height;
+	
+	}());
+	/*
+	O parenteses duplo (de fechamento) (), depois da chave de fechamento, informa ao interpretador
+	para chamar a função imediatamente ao se deparar com elas.
+	*/
+		
+	document.write("Á area de um terreno 3 x 225 é: ", area, " m².<br>");
+	
+	//Se document.write fosse chamada antes da função, area retornaria undefined.
+	
+	/*
+	p. 97 - Pronunciadas iffy, essas funções não recebem um nome. 
+	 - A ideia de um nome é justamente poder ser chamada posteriormente, pois, 
+	essas, em vez disso são executadas quando o interpretador se depara com elas.
+	
+	* são usadas para o código que só precisa se executado uma vez dentro de uma tarefa, em vez
+	de ser chamado repetidamente por outras partes do script. Exemplo:
+	
+	- Como um argumento quando uma função é chamada (para calcular uma valor dessa função)
+	- Para atribuir o valor de uma propriedade a um objeto.
+	- Em rotinas de tratamento de eventos (handlers) e ouvintes de eventos.
+	- Para evitar conflitos entre os dois scripts que podem usar os mesmos nomes de variáveis.
+	
+	###################################################
+	Uma diferença interessante entre a expressão de função e as funções IFFE é que a expressão
+	de função recebe a função (percebe-se na declaração da variável) já as funções IFFE recebe o
+	valor armazenado nas funções ao invés de armazenar a própria função, ver no exemplo 
+	p97-ExemploDeFuncao...
+	##################################################
+	
+	*/
+   </Script>
+  </body>
+</html>

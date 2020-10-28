@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<style>
+    p {
+        font-size: 18px;
+    }
+</style>
+
+<body>
+
+    <p>
+        parentNode = Obtém o nome do nó pai de um elemento.<br>
+        Na verdade, após gerar a nodlist com os métodos getlEmentsByClasseName(), querySelectAll(),
+        getEleentsByTagName, podemos retornar alguns nós com essas propriedades:
+        parentNode, previousSibling, nextSibling, fistChild e lastChild.
+    </p>
+    </p> Observe que são propriedades e não métodos, por isso não tem () no final.
+
+    <p>Lista Exemplo:</p>
+
+    <ul>
+        <li id="myLI">Café</li>
+        <li>Pão</li>
+    </ul>
+
+    <p>Clique no botão para obter o nome do nó pai do elemento li na lista.</p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLI").parentNode.nodeName;
+            //parentNode é uma propriedade de getElementByID, retornando aqui
+            //o nó do elemento pai na HTML. p. 208.
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+
+</body>
+
+</html>

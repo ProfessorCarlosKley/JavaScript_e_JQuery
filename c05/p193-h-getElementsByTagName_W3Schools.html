@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p> Uma lista não ordenada: </p>
+    <ul>
+        <li>1º elemento da lista - Café</li>
+        <li>2º elemento da lista - Leite</li>
+        <li>3º elemento da lista - Pão</li>
+        <li>4º elemento da lista - Manteiga</li>
+        <li>5º elemento da lista - Queijo</li>
+    </ul>
+
+    <p>Clique no botão para exibir o HTML interno do segundo elemento li (índice 1).</p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementsByTagName("li");
+            document.getElementById("demo").innerHTML = x[1].innerHTML;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.backgroundColor = "#ADD8E6";
+                x[i].style.width = "300px";
+                x[i].style.height = "40px";
+                x[i].style.color = "#0000CD ";
+                x[i].style.fontSize = "20px";
+                //x[i].style.listStyleImage = "url('images/seta.png')";
+                x[i].style.listStyle = "none";
+                x[i].style.borderStyle = "solid";
+                x[i].style.margin = "2px";
+                x[i].style.borderWidth = "1px";
+                x[i].style.borderColor = "blue";
+                x[i].style.boxShadow = "5px 5px 5px gray";
+                x[i].style.margin = "auto";
+                x[i].style.padding = "0 0 0 10px";
+                x[i].style.textAlign = "Left";
+                x[i].style.fontFamily = "Impact,Charcoal,sans-serif";
+                x[i].style.display = "block";
+                x[i].style.lineHeight = "40px";
+                x[i].style.verticalAlign = "middle";
+                //verticalAlign não funciona aqui, o que está centralizando é o 
+                //lineHeight. fica na vertical com display="table-cell"
+
+            }
+        }
+        //Observe que getElementsByTagName também retorna um Array.
+
+    </script>
+
+</body>
+
+</html>

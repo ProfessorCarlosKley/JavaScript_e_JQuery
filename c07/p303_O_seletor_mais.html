@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div + p").css("background-color", "yellow");
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>$("div + p") Seleciona cada elemento p ao lado de cada elmento div?</h2>
+
+    <div style="border:1px solid black;padding:10px;">Este é um elemento div.</div>
+    <p>Este elemento p está próximo (ao lado) ao elemento div.</p>
+    <p>Outro p, este agora não está próximo à div anterior.</p>
+
+    <div style="border:1px solid black;padding:10px;">
+        <p>Este é um p dentro de uma div, não é próximo a ela, é filho (interno)</p>
+    </div>
+
+    <h2>Este é um cabeçalho ao lado de um elemento div.</h2>
+    <p>Este é um elemento p (este elemento p não será selecionado, porque o elemento h2 acima é o elemento "next" de
+        o elemento div).</p>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Click the button get the node value of the first button element in the document.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p><strong>Note:</strong> Text inside elements are considered to be text nodes, so we return the node value of the
+        button element's first child (childNodes[0]).</p>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var c = document.getElementsByTagName("BUTTON")[0];
+            var x = c.childNodes[0].nodeValue;
+            document.getElementById("demo").innerHTML = x;
+            //nodValue acessa o texto do nó. p. 212.
+            /**
+                A propriedade nodeValue define ou retorna o valor 
+                do nó especificado. Se o nó for um nó de elemento, a
+                propriedade nodeValue retornará nulo. 
+                Nota: Se você deseja retornar o texto de um elemento, 
+                lembre-se de que o texto está sempre dentro de um nó de Texto
+                e você precisará retornar o valor do nó do nó de Texto (elemento.
+            */
+
+        }
+    </script>
+
+</body>
+
+</html>

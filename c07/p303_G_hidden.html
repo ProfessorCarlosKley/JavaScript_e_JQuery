@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+                //$(":hidden").show(1000);
+                //acima, exibimos todos os elementos ocultos, inclusive 
+                //as marcações(códigos) html e javscript
+                $("p,div:hidden").show(1000);
+                //seleciona todos os ocultos.
+                $("p:hidden").css("background-color", "#aaccff");
+                //seleciona um p oculto.
+            });
+        });
+    </script>
+    <style>
+        h1 {
+            background-color: #98FB98;
+            color: darkslateblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            background-color: darkslategrey;
+            color: white;
+        }
+
+        .container {
+            display: none;
+        }
+
+        div {
+            background-color: #98FB98;
+            color: red;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FILTROS BÁSICOS - :hidden - p. 303</h1>
+    <h2>Selecina todos os elementos que estão ocultos, por exemplo com display:none</h2>
+    <p>Parágrafo visível.</p>
+    <p>Outro paágrafo visível.</p>
+    <p style="display:none;">Este é um parágrafo oculto com display:none.</p>
+    <div class="container">Div Klei Oculto</div>
+    <button>Clique para obter os elementos.</button>
+
+</body>
+
+</html>

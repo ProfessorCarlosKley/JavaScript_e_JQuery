@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .example {
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="example">
+        Uma div com class="example"
+    </div>
+
+    <div class="example">
+        Outra div com class="example"
+    </div>
+
+    <p class="example">Elemento p com a class="example".</p>
+
+    <p>Aqui um span <span class="example">span</span> elemento com a class="example" inside another p element.</p>
+
+    <p>Clique aqui para mudar background de todos os elementos que tem class="exemple".</p>
+
+    <button class="example" onclick="myFunction()">Clique me</button>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementsByClassName("example");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.backgroundColor = "#98FB98";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+@import url(http://fonts.googleapis.com/css?family=Wellfleet);
+
+body {
+	
+	background-image: url("../images/Duda.jpg");
+	background-repeat: no-repeat;
+	color:black;
+	font-family: 'Wellfleet', times, serif;
+	font-size: 150%;
+	margin: 0px 0px 0px 0px;}
+
+#rTabuadaVezes {
+		color: darkblue;
+		
+		padding: 20px;
+		margin: 200px auto;
+		height:400px;
+		width: 400px;
+		text-align: center;
+		display:block;
+		float: left;
+
+	}
+	.container{
+	margin: auto;
+	margin-left: 200px;
+	}
+	#rTabuadaMais{
+		color: darkblue;
+
+		padding: 20px;
+		margin: 200px auto;
+		height:400px;
+		width: 400px;
+		text-align: center;
+		float: left;
+	}
+
+
+		h1{
+			color: chocolate;
+			text-align: center;
+
+		}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            background-color: red;
+            width: 400px;
+            height: 400px;
+            font-size: 100px;
+            color: burlywood;
+            border: 1px solid green;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.color.js"></script>
+    <!--Este plug-in instala um cssHook que permite que o .animate ()
+     do jQuery seja animado entre duas cores.-->
+</head>
+
+<body>
+    <button id="go">Simple</button>
+    <button id="sat">Desaturate</button>
+    <div id="block">Hello!</div>
+    <script>
+        $("#go").on("click", function () {
+            $("#block").animate({
+                backgroundColor: "#aaffff",
+                color: "#ffaaff"
+
+            }, 1500);
+        });
+        $("#sat").on("click", function () {
+            $("#block").animate({
+                backgroundColor: jQuery.Color({ saturation: 0 })
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

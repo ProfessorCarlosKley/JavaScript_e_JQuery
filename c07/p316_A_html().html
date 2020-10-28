@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("p").html("Hello <b>world!</b>");
+      });
+    });
+    /**
+     * - O método html () define ou retorna o conteúdo
+     * (innerHTML) dos elementos selecionados.
+     * - Quando esse método é usado para retornar conteúdo,
+     * ele retorna o conteúdo do PRIMEIRO elemento correspondente.
+     * - Quando esse método é usado para definir o conteúdo, ele substitui o
+     * conteúdo de TODOS os elementos correspondentes.
+    */
+  </script>
+</head>
+
+<body>
+
+  <button>Change content of all p elements</button>
+
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+
+</body>
+
+</html>

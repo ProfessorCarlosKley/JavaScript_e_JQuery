@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>
+
+        Pressione e mantenha pressionada uma tecla dentro do campo de texto para definir uma cor de fundo vermelha.
+        Solte a tecla para definir um verde
+        cor de fundo.
+    </p>
+
+    <input type="text" id="demo" onkeydown="keydownFunction()" onkeyup="keyupFunction()">
+
+    <script>
+        function keydownFunction() {
+            document.getElementById("demo").style.backgroundColor = "red";
+        }
+
+        function keyupFunction() {
+            document.getElementById("demo").style.backgroundColor = "green";
+        }
+    </script>
+
+</body>
+
+</html>

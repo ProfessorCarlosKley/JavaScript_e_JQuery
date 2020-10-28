@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        a[target] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>O seletor CSS a [target] garante que todos os links com um atributo target tenham um fundo amarelo:</p>
+
+    <a href="https://www.w3schools.com">w3schools.com</a>
+    <a href="http://www.disney.com" target="_blank">disney.com</a>
+    <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+    <p>Clique no botão para adicionar uma borda vermelha ao primeiro link que possui um atributo de destino.</p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <script>
+        function myFunction() {
+            document.querySelector("a[target]").style.border = "5px solid red";
+        }
+    </script>
+
+</body>
+
+</html>

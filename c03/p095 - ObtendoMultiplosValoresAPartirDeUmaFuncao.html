@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+
+ </head>
+  
+  <body>
+  <script>
+	function calcular(comp, larg, alt){	
+		var area = comp * larg;
+		var volume = comp * larg * alt;
+		var triangulo = (comp * larg)/2;
+		var resultados = [area, volume, triangulo] ;
+		return resultados;
+	}
+	
+	var cArea = calcular(3,2,3)[0];
+	//retorna a área, pois a função retorna um array e o primeiro elemento é a var area = comp * larg
+	var cVolume = calcular(3,2,3)[1];
+	//retorna o volume, pois a função retorna um array e o primeiro elemento é a var area = comp * larg * alt
+    var cTriangulo = calcular(3,2,3)[2];
+	document.write("Á area de 3 x 2 é: ", cArea, "<br>");
+	document.write("O volume de 3 x 2 x 3 é: ", cVolume, "<br>");
+	document.write("A área do triângulo de base 3 e altura 2 é: ", cTriangulo, "<br>");
+   </Script>
+  </body>
+</html>

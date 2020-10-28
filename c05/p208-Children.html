@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .descendants * {
+      display: block;
+      border: 2px solid lightgrey;
+      color: lightgrey;
+      padding: 5px;
+      margin: 15px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("ul").children().css({ "background-color": "yellow", "color": "red", "border": "2px solid red" });
+      //seleciona todos os filhos de ul.
+    });
+  </script>
+</head>
+
+<body class="descendants">body (great-grandparent)
+  <div style="width:500px;">div (grandparent)
+    <ul>ul (direct parent)
+      <li>li (child1)
+        <span>span (grandchild)</span>
+      </li>
+      <li>li (child2)
+        <span>span2 (grandchild)</span>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

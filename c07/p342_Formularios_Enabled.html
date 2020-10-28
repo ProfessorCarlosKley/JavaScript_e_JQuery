@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/index-numbers.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(":enabled").css("background-color", "yellow");
+        });
+    </script>
+</head>
+
+<body>
+    <h1>$(":enabled") Localiza input habilitados</h1>
+    <form action="">
+        Name: <input type="text" name="user"><br>
+        ID:<input type="text" name="id" disabled="disabled">
+
+        Age:
+        <select disabled="disabled">
+            <option>20-30</option>
+            <option>30-50</option>
+            <option>50+</option>
+        </select>
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>

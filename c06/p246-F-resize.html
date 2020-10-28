@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body onresize="myFunction()">
+
+    <p>Tente redimensionar a janela do navegador para exibir a altura e a largura das janelas.</p>
+
+    <p id="demo"></p>
+
+
+
+    <script>
+        function myFunction() {
+            var w = window.outerWidth;
+            var h = window.outerHeight;
+            var txt = "Tamanho da Janela: Comprimento=" + w + ", largura=" + h;
+            document.getElementById("demo").innerHTML = txt;
+        }
+
+        /**
+            A propriedade outerWidth da janela é usada para retornar a largura externa
+            da janela do navegador. Inclui todos os elementos da interface, como barras
+            de ferramentas, barras de rolagem, etc. É uma propriedade somente leitura
+            e retorna um número que representa a largura da janela do navegador em
+            pixels.
+
+            A propriedade somente leitura Window.outerHeight retorna a
+            altura em pixels de toda a janela do navegador, incluindo qualquer
+            barra lateral, cromo da janela e bordas / alças de
+            redimensionamento de janela
+        **/
+    </script>
+
+</body>
+
+</html>

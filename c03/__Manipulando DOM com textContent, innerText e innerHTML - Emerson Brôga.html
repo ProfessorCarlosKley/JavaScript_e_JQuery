@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://emersonbroga.com/manipulando-dom-com-textcontent-innertext-e-innerhtml/ -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+			<link rel="pingback" href="https://emersonbroga.com/xmlrpc.php">
+		<title>Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Aprenda a manipular o DOM e saiba quando usar innterHTML, innerText e textContent. Veja a diferença e entenda como essas tres propriedades funcionam.">
+<link rel="canonical" href="https://emersonbroga.com/manipulando-dom-com-textcontent-innertext-e-innerhtml/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga">
+<meta property="og:description" content="Aprenda a manipular o DOM e saiba quando usar innterHTML, innerText e textContent. Veja a diferença e entenda como essas tres propriedades funcionam.">
+<meta property="og:url" content="https://emersonbroga.com/manipulando-dom-com-textcontent-innertext-e-innerhtml/">
+<meta property="og:site_name" content="Emerson Brôga">
+<meta property="article:publisher" content="https://www.facebook.com/emersonbrogadev">
+<meta property="article:author" content="https://www.facebook.com/emersonbroga">
+<meta property="article:tag" content="DOM">
+<meta property="article:tag" content="DOMManipulation">
+<meta property="article:tag" content="es6">
+<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="innerHTML">
+<meta property="article:tag" content="innerText">
+<meta property="article:tag" content="jascript">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="textContent">
+<meta property="article:section" content="Javascript">
+<meta property="article:published_time" content="2019-01-07T11:22:21+00:00">
+<meta property="article:modified_time" content="2019-02-14T01:05:49+00:00">
+<meta property="og:updated_time" content="2019-02-14T01:05:49+00:00">
+<meta property="og:image" content="https://emersonbroga.com/wp-content/uploads/2019/01/manipulando-dom-com-textcontent-innertext-e-innerhtml.jpg">
+<meta property="og:image:secure_url" content="https://emersonbroga.com/wp-content/uploads/2019/01/manipulando-dom-com-textcontent-innertext-e-innerhtml.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Aprenda a manipular o DOM e saiba quando usar innterHTML, innerText e textContent. Veja a diferença e entenda como essas tres propriedades funcionam.">
+<meta name="twitter:title" content="Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga">
+<meta name="twitter:site" content="@emersonbroga">
+<meta name="twitter:image" content="https://emersonbroga.com/wp-content/uploads/2019/01/manipulando-dom-com-textcontent-innertext-e-innerhtml.jpg">
+<meta name="twitter:creator" content="@emersonbroga">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Feed para Emerson Brôga »" href="https://emersonbroga.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Emerson Brôga »" href="https://emersonbroga.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Emerson Brôga » Manipulando DOM com textContent, innerText e innerHTML" href="https://emersonbroga.com/manipulando-dom-com-textcontent-innertext-e-innerhtml/feed/">
+		<script type="text/javascript" async="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/analytics.js.download"></script><script type="text/javascript" async="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/analytics.js.download"></script><script type="text/javascript" async="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/f.txt"></script><script async="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/gtm.js.download"></script><script src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/inferredEvents.js.download" async=""></script><script src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/2004847702976901" async=""></script><script async="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/fbevents.js.download"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/emersonbroga.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="css-custom-css" href="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/custom.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="hestia-font-sizes-css" href="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/font-sizes.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="hestia_style-css" href="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/style.min(1).css" type="text/css" media="all">
+<style id="hestia_style-inline-css" type="text/css">
+.hestia-top-bar, .hestia-top-bar .widget.widget_shopping_cart .cart_list {
+			background-color: #363537
+		}
+		.hestia-top-bar .widget .label-floating input[type=search]:-webkit-autofill {
+			-webkit-box-shadow: inset 0 0 0px 9999px #363537
+		}.hestia-top-bar, .hestia-top-bar .widget .label-floating input[type=search], .hestia-top-bar .widget.widget_search form.form-group:before, .hestia-top-bar .widget.widget_product_search form.form-group:before, .hestia-top-bar .widget.widget_shopping_cart:before {
+			color: #ffffff
+		} 
+		.hestia-top-bar .widget .label-floating input[type=search]{
+			-webkit-text-fill-color:#ffffff !important 
+		}.hestia-top-bar a, .hestia-top-bar .top-bar-nav li a {
+			color: #ffffff
+		}.hestia-top-bar a:hover, .hestia-top-bar .top-bar-nav li a:hover {
+			color: #eeeeee
+		}
+	
+		a, 
+		.navbar .dropdown-menu li:hover > a,
+		.navbar .dropdown-menu li:focus > a,
+		.navbar .dropdown-menu li:active > a,
+		.navbar .navbar-nav > li .dropdown-menu li:hover > a,
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a,
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:hover,
+		body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:focus,
+		a:hover, 
+		.card-blog a.moretag:hover, 
+		.card-blog a.more-link:hover, 
+		.widget a:hover,
+		.has-accent-color {
+		    color:#ed5e37;
+		}
+		
+		.pagination span.current, .pagination span.current:focus, .pagination span.current:hover {
+			border-color:#ed5e37
+		}
+		
+		button,
+		button:hover,
+		.woocommerce .track_order button[type="submit"],
+		.woocommerce .track_order button[type="submit"]:hover,
+		div.wpforms-container .wpforms-form button[type=submit].wpforms-submit,
+		div.wpforms-container .wpforms-form button[type=submit].wpforms-submit:hover,
+		input[type="button"],
+		input[type="button"]:hover,
+		input[type="submit"],
+		input[type="submit"]:hover,
+		input#searchsubmit, 
+		.pagination span.current, 
+		.pagination span.current:focus, 
+		.pagination span.current:hover,
+		.btn.btn-primary,
+		.btn.btn-primary:link,
+		.btn.btn-primary:hover, 
+		.btn.btn-primary:focus, 
+		.btn.btn-primary:active, 
+		.btn.btn-primary.active, 
+		.btn.btn-primary.active:focus, 
+		.btn.btn-primary.active:hover,
+		.btn.btn-primary:active:hover, 
+		.btn.btn-primary:active:focus, 
+		.btn.btn-primary:active:hover,
+		.hestia-sidebar-open.btn.btn-rose,
+		.hestia-sidebar-close.btn.btn-rose,
+		.hestia-sidebar-open.btn.btn-rose:hover,
+		.hestia-sidebar-close.btn.btn-rose:hover,
+		.hestia-sidebar-open.btn.btn-rose:focus,
+		.hestia-sidebar-close.btn.btn-rose:focus,
+		.label.label-primary,
+		.hestia-work .portfolio-item:nth-child(6n+1) .label,
+		.nav-cart .nav-cart-content .widget .buttons .button,
+		.has-accent-background-color {
+		    background-color: #ed5e37;
+		}
+		
+		@media (max-width: 768px) { 
+	
+			.navbar-default .navbar-nav>li>a:hover,
+			.navbar-default .navbar-nav>li>a:focus,
+			.navbar .navbar-nav .dropdown .dropdown-menu li a:hover,
+			.navbar .navbar-nav .dropdown .dropdown-menu li a:focus,
+			.navbar button.navbar-toggle:hover,
+			.navbar .navbar-nav li:hover > a i {
+			    color: #ed5e37;
+			}
+		}
+		
+		body:not(.woocommerce-page) button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.close),
+		body:not(.woocommerce-page) .button:not([class^="fl-"]):not(hestia-scroll-to-top):not(.navbar-toggle):not(.add_to_cart_button),
+		div.wpforms-container .wpforms-form button[type=submit].wpforms-submit,
+		input[type="submit"], 
+		input[type="button"], 
+		.btn.btn-primary,
+		.widget_product_search button[type="submit"],
+		.hestia-sidebar-open.btn.btn-rose,
+		.hestia-sidebar-close.btn.btn-rose,
+		.everest-forms button[type=submit].everest-forms-submit-button {
+		    -webkit-box-shadow: 0 2px 2px 0 rgba(237,94,55,0.14),0 3px 1px -2px rgba(237,94,55,0.2),0 1px 5px 0 rgba(237,94,55,0.12);
+		    box-shadow: 0 2px 2px 0 rgba(237,94,55,0.14),0 3px 1px -2px rgba(237,94,55,0.2),0 1px 5px 0 rgba(237,94,55,0.12);
+		}
+		
+		.card .header-primary, .card .content-primary,
+		.everest-forms button[type=submit].everest-forms-submit-button {
+		    background: #ed5e37;
+		}
+		
+		body:not(.woocommerce-page) .button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.add_to_cart_button):hover,
+		body:not(.woocommerce-page) button:not([class^="fl-"]):not(.hestia-scroll-to-top):not(.navbar-toggle):not(.close):hover,
+		div.wpforms-container .wpforms-form button[type=submit].wpforms-submit:hover,
+		input[type="submit"]:hover,
+		input[type="button"]:hover,
+		input#searchsubmit:hover, 
+		.widget_product_search button[type="submit"]:hover,
+		.pagination span.current, 
+		.btn.btn-primary:hover, 
+		.btn.btn-primary:focus, 
+		.btn.btn-primary:active, 
+		.btn.btn-primary.active, 
+		.btn.btn-primary:active:focus, 
+		.btn.btn-primary:active:hover, 
+		.hestia-sidebar-open.btn.btn-rose:hover,
+		.hestia-sidebar-close.btn.btn-rose:hover,
+		.pagination span.current:hover,
+		.everest-forms button[type=submit].everest-forms-submit-button:hover,
+ 		.everest-forms button[type=submit].everest-forms-submit-button:focus,
+ 		.everest-forms button[type=submit].everest-forms-submit-button:active {
+			-webkit-box-shadow: 0 14px 26px -12px rgba(237,94,55,0.42),0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px rgba(237,94,55,0.2);
+		    box-shadow: 0 14px 26px -12px rgba(237,94,55,0.42),0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px rgba(237,94,55,0.2);
+			color: #fff;
+		}
+		
+		.form-group.is-focused .form-control {
+			background-image: -webkit-gradient(linear,left top, left bottom,from(#ed5e37),to(#ed5e37)),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: -webkit-linear-gradient(linear,left top, left bottom,from(#ed5e37),to(#ed5e37)),-webkit-linear-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: linear-gradient(linear,left top, left bottom,from(#ed5e37),to(#ed5e37)),linear-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+		}
+		
+		.navbar:not(.navbar-transparent) li:not(.btn):hover > a,
+		.navbar li.on-section:not(.btn) > a, 
+		.navbar.full-screen-menu.navbar-transparent li:not(.btn):hover > a,
+		.navbar.full-screen-menu .navbar-toggle:hover,
+		.navbar:not(.navbar-transparent) .nav-cart:hover, 
+		.navbar:not(.navbar-transparent) .hestia-toggle-search:hover {
+				color:#ed5e37}
+		
+		.header-filter-gradient { 
+			background: linear-gradient(45deg, rgba(255,109,68,1) 0%, rgb(255,137,47) 100%); 
+		}
+		.has-header-gradient-color { color: #ff6d44; }
+		.has-header-gradient-background-color { background-color: #ff6d44; }
+		 
+		.has-background-color-color { color: #E5E5E5; }
+		.has-background-color-background-color { background-color: #E5E5E5; }
+		
+.btn.btn-primary:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item), input[type="submit"]:not(.search-submit), body:not(.woocommerce-account) .woocommerce .button.woocommerce-Button, .woocommerce .product button.button, .woocommerce .product button.button.alt, .woocommerce .product #respond input#submit, .woocommerce-cart .blog-post .woocommerce .cart-collaterals .cart_totals .checkout-button, .woocommerce-checkout #payment #place_order, .woocommerce-account.woocommerce-page button.button, .woocommerce .track_order button[type="submit"], .nav-cart .nav-cart-content .widget .buttons .button, .woocommerce a.button.wc-backward, body.woocommerce .wccm-catalog-item a.button, body.woocommerce a.wccm-button.button, form.woocommerce-form-coupon button.button, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, div.woocommerce a.button.alt, div.woocommerce table.my_account_orders .button, .btn.colored-button, .btn.btn-left, .btn.btn-right, .btn:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item):not(.hestia-sidebar-open):not(.hestia-sidebar-close){ padding-top:15px;  padding-bottom:15px;  padding-left:33px;  padding-right:33px; }
+.btn.btn-primary:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item), input[type="submit"]:not(.search-submit), body:not(.woocommerce-account) .woocommerce .button.woocommerce-Button, .woocommerce .product button.button, .woocommerce .product button.button.alt, .woocommerce .product #respond input#submit, .woocommerce-cart .blog-post .woocommerce .cart-collaterals .cart_totals .checkout-button, .woocommerce-checkout #payment #place_order, .woocommerce-account.woocommerce-page button.button, .woocommerce .track_order button[type="submit"], .nav-cart .nav-cart-content .widget .buttons .button, .woocommerce a.button.wc-backward, body.woocommerce .wccm-catalog-item a.button, body.woocommerce a.wccm-button.button, form.woocommerce-form-coupon button.button, div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, div.woocommerce a.button.alt, div.woocommerce table.my_account_orders .button, input[type="submit"].search-submit, .hestia-view-cart-wrapper .added_to_cart.wc-forward, .woocommerce-product-search button, .woocommerce-cart .actions .button, #secondary div[id^=woocommerce_price_filter] .button, .woocommerce div[id^=woocommerce_widget_cart].widget .buttons .button, .searchform input[type=submit], .searchform button, .search-form:not(.media-toolbar-primary) input[type=submit], .search-form:not(.media-toolbar-primary) button, .woocommerce-product-search input[type=submit], .btn.colored-button, .btn.btn-left, .btn.btn-right, .btn:not(.colored-button):not(.btn-left):not(.btn-right):not(.btn-just-icon):not(.menu-item):not(.hestia-sidebar-open):not(.hestia-sidebar-close){border-radius:3px;}
+@media (min-width: 769px){
+			.page-header.header-small .hestia-title,
+			.page-header.header-small .title,
+			h1.hestia-title.title-in-content,
+			.main article.section .has-title-font-size {
+				font-size: 42px;
+			}}
+</style>
+<link rel="stylesheet" id="hestia_fonts-css" href="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/css" type="text/css" media="all">
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/jquery.js.download"></script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/jquery-migrate.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://emersonbroga.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://emersonbroga.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://emersonbroga.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.2.2">
+<link rel="shortlink" href="https://emersonbroga.com/?p=918">
+<link rel="alternate" type="application/json+oembed" href="https://emersonbroga.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Femersonbroga.com%2Fmanipulando-dom-com-textcontent-innertext-e-innerhtml%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://emersonbroga.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Femersonbroga.com%2Fmanipulando-dom-com-textcontent-innertext-e-innerhtml%2F&amp;format=xml">
+
+
+<!-- This site is optimized with the Schema plugin v1.7.5 - https://schema.press -->
+<script type="application/ld+json">{"@context":"http:\/\/schema.org\/","@type":"TechArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/emersonbroga.com\/manipulando-dom-com-textcontent-innertext-e-innerhtml\/"},"url":"https:\/\/emersonbroga.com\/manipulando-dom-com-textcontent-innertext-e-innerhtml\/","headline":"Manipulando DOM com textContent, innerText e...","datePublished":"2019-01-07T08:22:21-03:00","dateModified":"2019-02-13T22:05:49+00:00","publisher":{"@type":"Organization","@id":"https:\/\/emersonbroga.com\/#organization","name":"Emerson Brôga","logo":{"@type":"ImageObject","url":"","width":600,"height":60}},"image":{"@type":"ImageObject","url":"https:\/\/emersonbroga.com\/wp-content\/uploads\/2019\/01\/manipulando-dom-com-textcontent-innertext-e-innerhtml.jpg","width":1920,"height":1080},"articleSection":"Javascript","description":"Aprenda a manipular o DOM e saiba quando usar innterHTML, innerText e textContent. Veja a diferença e entenda como essas tres propriedades funcionam.","author":{"@type":"Person","name":"@emersonbroga","url":"https:\/\/emersonbroga.com\/author\/admin\/","description":"Formado em Desenvolvimento de Sistemas pela Faculdade Pitágoras e pós-graduado em Gestão Estratégica de Marketing pela PUC Minas trabalhei em diversas agências e atualmente trabalho em projetos internacionais como FOX.com, FXNetworks.com, NatGeo.com entre outros.\r\n\r\nSaiba mais em https:\/\/emersonbroga.com\/e\/sobre\/.","image":{"@type":"ImageObject","url":"https:\/\/secure.gravatar.com\/avatar\/39d4ef5b0e96b58b0c61288790a51b32?s=96&d=mm&r=g","height":96,"width":96},"sameAs":["http:\/\/emersonbroga.com","https:\/\/www.facebook.com\/emersonbroga","https:\/\/twitter.com\/emersonbroga"]}}</script>
+
+  <!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2004847702976901');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2004847702976901&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code --><script async="" type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/count.js.download"></script><script type="text/javascript" async="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/embed.js.download"></script><script src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/f(1).txt"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.81e9bdc293cf1db0e7899fb23e870851.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.f34f9f29f33d91cf7fddb3c8c7038d08.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.783458b0a11b36b2894d1cf3d3dfb0bb.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"></head><body class="post-template-default single single-post postid-918 single-format-standard wp-custom-logo blog-post header-layout-default">';<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MPN6RXL');</script>
+<!-- End Google Tag Manager --><!-- Global site tag (gtag.js) - Google Ads: 1039484572 -->
+<script async="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1039484572');
+</script>
+<!-- /end Global site tag (gtag.js) - Google Ads: 1039484572 --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-16288179-1');
+</script>
+<!-- /end Global site tag (gtag.js) - Google Analytics --><style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="icon" href="https://emersonbroga.com/wp-content/uploads/2019/07/cropped-emersonbroga-logo-b-pink-512x512-32x32.png" sizes="32x32">
+<link rel="icon" href="https://emersonbroga.com/wp-content/uploads/2019/07/cropped-emersonbroga-logo-b-pink-512x512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://emersonbroga.com/wp-content/uploads/2019/07/cropped-emersonbroga-logo-b-pink-512x512-180x180.png">
+<meta name="msapplication-TileImage" content="https://emersonbroga.com/wp-content/uploads/2019/07/cropped-emersonbroga-logo-b-pink-512x512-270x270.png">
+		<style type="text/css" id="wp-custom-css">
+			#menu-header-menu li a { color: #FFF; }		</style>
+		
+
+
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPN6RXL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->	<div class="wrapper post-918 post type-post status-publish format-standard has-post-thumbnail hentry category-js tag-dom tag-dommanipulation tag-es6 tag-html tag-innerhtml tag-innertext tag-jascript tag-javascript tag-textcontent default ">
+		<header class="header ">
+			<div style="display: none"></div>		<nav class="navbar navbar-default navbar-fixed-top  hestia_left navbar-not-transparent navbar-scroll-point">
+						<div class="container">
+						<div class="navbar-header">
+			<div class="title-logo-wrapper">
+				<a class="navbar-brand" href="https://emersonbroga.com/" title="Emerson Brôga">
+					<img src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/cropped-logo-emersonbroga-bege.png" alt="Emerson Brôga"></a>
+			</div>
+								<div class="navbar-toggle-wrapper">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="sr-only">Alternar navegação</span>
+			</button>
+					</div>
+				</div>
+		<div id="main-navigation" class="collapse navbar-collapse"><ul id="menu-header-menu" class="nav navbar-nav"><li id="menu-item-1294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1294"><a title="Participe" href="https://emersonbroga.com/e/participe/">Participe</a></li>
+<li id="menu-item-1296" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1296"><a title="Sobre" href="https://emersonbroga.com/e/sobre/">Sobre</a></li>
+</ul></div>			</div>
+					</nav>
+				</header>
+<div id="primary" class="boxed-layout-header page-header header-small" data-parallax="active"><div class="container" style="padding-top: 170px;"><div class="row"><div class="col-md-10 col-md-offset-1 text-center"><h1 class="hestia-title entry-title">Manipulando DOM com textContent, innerText e innerHTML</h1><h4 class="author">Publicado por <a href="https://emersonbroga.com/author/admin/" class="vcard author"><strong class="fn">@emersonbroga</strong></a> em <time class="entry-date published" datetime="2019-01-07T08:22:21-03:00" content="2019-01-07">janeiro 7, 2019</time><time class="updated hestia-hidden" datetime="2019-02-13T22:05:49-03:00">janeiro 7, 2019</time></h4></div></div></div><div class="header-filter" style="background-image: url(https://emersonbroga.com/wp-content/uploads/2019/01/manipulando-dom-com-textcontent-innertext-e-innerhtml.jpg);"></div></div>
+<div class="main  main-raised ">
+	<div class="blog-post blog-post-wrapper">
+		<div class="container">
+			<article id="post-918" class="section section-text">
+	<div class="row">
+				<div class="col-md-8 single-post-container" data-layout="sidebar-right">
+
+			<div class="single-post-wrap entry-content"><p><strong style="font-size: 30px;">Olá</strong> pessoal, hoje vou falar sobre um tópico bem básico, mas que muita gente desconhece. Hoje vamos entender as pricipais diferenças entre <code>textContent</code>, <code>innerText</code>, <code>innerHTML</code>. Todos os 3 metodos estão disponíveis para manipulação do DOM (Document Object Model). Por se tratarem de manipulação do DOM você precisa de pegar o elemento do dom e então chamar essas funções e existem diversas formas de fazer isso, como por exemplo <code>document.getElementById()</code> ou <code>document.querySelector()</code>, e hoje vamos exemplificar usando <code>document.getElementById()</code></p>
+<p>.</p>
+<h2>Lendo informações do DOM usando textContent, innerText e innerHTML</h2>
+<h3>innerHTML</h3>
+<p>Esse com certeza é o mais utilizado para manipulação de DOM, pois existe a mais tempo, mas existem algumas peculiaridades que devemos ficar atentos.<br>
+Como se é de esperar, quando usamos o <code>innerHTML</code> ele irá retornar todo o texto e o html que existem no elemento, por exemplo:</p>
+<div id="attachment_923" style="width: 760px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-923" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/example-1-1024x596.jpg" alt="Lendo o DOM usando innerHTML" width="750" height="437" class="size-large wp-image-923" srcset="https://emersonbroga.com/wp-content/uploads/2019/01/example-1-1024x596.jpg 1024w, https://emersonbroga.com/wp-content/uploads/2019/01/example-1-300x175.jpg 300w, https://emersonbroga.com/wp-content/uploads/2019/01/example-1-768x447.jpg 768w" sizes="(max-width: 750px) 100vw, 750px"><p id="caption-attachment-923" class="wp-caption-text">Lendo o DOM usando innerHTML</p></div>
+<p>Como vocês podem perceber, ele retornou todo o html existente na div “content”, incluindo o <code>&lt;strong&gt;</code> e o <code>&lt;span&gt;</code> oculto com css.</p>
+<h3>innerText</h3>
+<p>Quando usamos o <code>innerText</code>, diferentemente do <code>innerHTML</code>, irá retornar apenas o texto, ignorando todas as tags <code>HTML</code> de dentro do elemento, porém <code>innerText</code> “entende” o <code>CSS</code> do elemento, então retornará apenas textos visíveis.</p>
+<div id="attachment_924" style="width: 760px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-924" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/example-2-1024x596.jpg" alt="Lendo o DOM usando innerText" width="750" height="437" class="size-large wp-image-924" srcset="https://emersonbroga.com/wp-content/uploads/2019/01/example-2-1024x596.jpg 1024w, https://emersonbroga.com/wp-content/uploads/2019/01/example-2-300x175.jpg 300w, https://emersonbroga.com/wp-content/uploads/2019/01/example-2-768x447.jpg 768w" sizes="(max-width: 750px) 100vw, 750px"><p id="caption-attachment-924" class="wp-caption-text">Lendo o DOM usando innerText</p></div>
+<h3>textContent</h3>
+<p>O <code>textContent</code>, funciona de forma parecida com o <code>innerText</code>, retornando somente o texto e ignorando as tags <code>HTML</code>, mas o <code>textContent</code> tras todo o conteudo do texto, incluindo o texto oculto pelo css assim como as quebras de linha (<code>\\n</code>).</p>
+<div id="attachment_925" style="width: 760px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-925" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/example-3-1024x635.jpg" alt="Lendo o DOM usando textContent" width="750" height="465" class="size-large wp-image-925" srcset="https://emersonbroga.com/wp-content/uploads/2019/01/example-3-1024x635.jpg 1024w, https://emersonbroga.com/wp-content/uploads/2019/01/example-3-300x186.jpg 300w, https://emersonbroga.com/wp-content/uploads/2019/01/example-3-768x476.jpg 768w" sizes="(max-width: 750px) 100vw, 750px"><p id="caption-attachment-925" class="wp-caption-text">Lendo o DOM usando textContent</p></div>
+<h2>Escrevendo informações no DOM usando textContent, innerText e innerHTML</h2>
+<p>Agora vamos ver como essas 3 propriedades se comportam para escrever no DOM</p>
+<h3>innerHTML</h3>
+<p>Como se é esperado com o <code>innerHTML</code>, podemos excrever texto e html no DOM.</p>
+<div id="attachment_926" style="width: 760px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-926" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/example-4-1024x712.jpg" alt="Escrevendo no DOM usando innerHTML" width="750" height="521" class="size-large wp-image-926" srcset="https://emersonbroga.com/wp-content/uploads/2019/01/example-4-1024x712.jpg 1024w, https://emersonbroga.com/wp-content/uploads/2019/01/example-4-300x208.jpg 300w, https://emersonbroga.com/wp-content/uploads/2019/01/example-4-768x534.jpg 768w" sizes="(max-width: 750px) 100vw, 750px"><p id="caption-attachment-926" class="wp-caption-text">Escrevendo no DOM usando innerHTML</p></div>
+<h3>innerText e textContent</h3>
+<p>O <code>innerText</code> e <code>textContent</code> escrevem o texto no DOM, porem ignoram as tags html, que são escritas como texto também. Na escrita tanto o code&gt;innerText quanto o <code>textContent</code> funcionam de forma similar.</p>
+<div id="attachment_927" style="width: 760px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-927" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/example-5-1024x658.jpg" alt="Escrevendo no DOM com innerText" width="750" height="482" class="size-large wp-image-927" srcset="https://emersonbroga.com/wp-content/uploads/2019/01/example-5-1024x658.jpg 1024w, https://emersonbroga.com/wp-content/uploads/2019/01/example-5-300x193.jpg 300w, https://emersonbroga.com/wp-content/uploads/2019/01/example-5-768x494.jpg 768w" sizes="(max-width: 750px) 100vw, 750px"><p id="caption-attachment-927" class="wp-caption-text">Escrevendo no DOM com innerText</p></div>
+<h2>Qual deles devo utilizar?</h2>
+<p>Se o seu intuito for ler ou escrever html dentro de um elemento DOM, você deve usar o <code>innerHTML</code>. Se você quer apenas ler o texto, você deve escolher entre o <code>innerText</code> e o <code>textContent</code> levando em consideração se os textos que não estão visíveis ao usuário deverão ser lidos.</p>
+<p>Outra consideração importante a se fazer também durante a escrita de conteúdo no DOM é que se você usar o <code>innerHTML</code> e a origem do conteúdo não é de seu controle, você ficará vulnerável à ataques <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noopener">XSS</a>.</p>
+<p>O textContent não está disponivel no IE8, entao você deve adicionar um script de forma condicional para que possa usá-lo no IE8, veja como no post do <a href="https://eligrey.com/blog/textcontent-in-ie8/" target="_blank" rel="noopener">Eli Grey</a> sobre o assunto.</p>
+<h2>Código completo</h2>
+<p>O código completo está disponivel em nosso <a href="https://github.com/emersonbrogadev/" target="_blank" rel="noopener">github</a> no <a href="https://github.com/emersonbrogadev/blogposts/tree/master/manipulando-dom-com-textcontent-innertext-e-innerhtml" target="_blank">repositório dos posts do blog</a>.</p>
+<div id="attachment_928" style="width: 760px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-928" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/example-6-1024x752.jpg" alt="Lendo o DOM com innerHTML, innerText e textContent" width="750" height="551" class="size-large wp-image-928" srcset="https://emersonbroga.com/wp-content/uploads/2019/01/example-6-1024x752.jpg 1024w, https://emersonbroga.com/wp-content/uploads/2019/01/example-6-300x220.jpg 300w, https://emersonbroga.com/wp-content/uploads/2019/01/example-6-768x564.jpg 768w" sizes="(max-width: 750px) 100vw, 750px"><p id="caption-attachment-928" class="wp-caption-text">Lendo o DOM com innerHTML, innerText e textContent</p></div>
+<h2>Obrigado pela leitura <img draggable="false" class="emoji" alt="👍" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f44d.svg"><img draggable="false" class="emoji" alt="👍" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f44d.svg"><img draggable="false" class="emoji" alt="👍" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f44d.svg"></h2>
+<p>Espero que você tenha gostado desse post, creio que agora você irá conseguir tomar decisões mais conscientes ao manipular o <strong>DOM</strong>.</p>
+<p>Se você gostou desse post, compartilhe com seus amigos e ajude a espalhar o conhecimento!<br>
+Se ainda ficou com dúvidas, por favor deixe nos comentários.</p>
+<p>Não se esqueça de nos seguir nas redes sociais, por que você não pode ficar de fora dos novos posts.</p>
+<ol>
+<li><a href="https://www.facebook.com/emersonbrogadev/" target="_blank" rel="noopener">Curta nossa página no facebook <img draggable="false" class="emoji" alt="👍" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f44d.svg"></a></li>
+<li><a href="https://twitter.com/emersonbrogadev/" target="_blank" rel="noopener">Não perca as atualizações no twitter <img draggable="false" class="emoji" alt="🐦" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f426.svg"></a></li>
+<li><a href="https://www.instagram.com/emersonbrogadev/" target="_blank" rel="noopener">Veja as dicas no instagram <img draggable="false" class="emoji" alt="📸" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f4f8.svg"></a></li>
+<li><a href="https://github.com/emersonbrogadev/" target="_blank" rel="noopener">Siga nossos repositórios no github <img draggable="false" class="emoji" alt="⌨️" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/2328.svg"></a></li>
+<li><a href="https://emersonbroga.com/participe/" target="_blank" rel="noopener">Faça parte da nossa lista de desenvolvedores <img draggable="false" class="emoji" alt="📨" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f4e8.svg"></a></li>
+</ol>
+<p><strong>Hashtags</strong></p>
+<p>#javascript #js #es6 #DOM #HTML #innerText #innerHTML #textContent #html #html5 #DOMManipulation </p>
+</div>
+		<div class="section section-blog-info">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="entry-categories">Categorias:						<span class="label label-primary"><a href="https://emersonbroga.com/category/js/">Javascript</a></span>					</div>
+					<div class="entry-tags">Tags: <span class="entry-tag"><a href="https://emersonbroga.com/tag/dom/" rel="tag">DOM</a></span><span class="entry-tag"><a href="https://emersonbroga.com/tag/dommanipulation/" rel="tag">DOMManipulation</a></span><span class="entry-tag"><a href="https://emersonbroga.com/tag/es6/" rel="tag">es6</a></span><span class="entry-tag"><a href="https://emersonbroga.com/tag/html/" rel="tag">HTML</a></span><span class="entry-tag"><a href="https://emersonbroga.com/tag/innerhtml/" rel="tag">innerHTML</a></span><span class="entry-tag"><a href="https://emersonbroga.com/tag/innertext/" rel="tag">innerText</a></span><span class="entry-tag"><a href="https://emersonbroga.com/tag/jascript/" rel="tag">jascript</a></span><span class="entry-tag"><a href="https://emersonbroga.com/tag/javascript/" rel="tag">javascript</a></span><span class="entry-tag"><a href="https://emersonbroga.com/tag/textcontent/" rel="tag">textContent</a></span></div>				</div>
+				
+        <div class="col-md-6">
+            <div class="entry-social">
+                <a target="_blank" rel="tooltip" data-original-title="Compartilhar no Facebook " class="btn btn-just-icon btn-round btn-facebook" href="https://www.facebook.com/sharer.php?u=https://emersonbroga.com/manipulando-dom-com-textcontent-innertext-e-innerhtml/">
+                   <i class="fa fa-facebook"></i>
+                </a>
+                
+                <a target="_blank" rel="tooltip" data-original-title="Compartilhar este artigo no Twitter" class="btn btn-just-icon btn-round btn-twitter" href="http://twitter.com/share?url=https://emersonbroga.com/manipulando-dom-com-textcontent-innertext-e-innerhtml/&amp;text=Manipulando%20DOM%20com%20textContent%2C%20innerText%20e%20innerHTML">
+                   <i class="fa fa-twitter"></i>
+                </a>
+                
+                <a rel="tooltip" data-original-title=" Compartilhe por e-mail" class="btn btn-just-icon btn-round" href="mailto:?subject=Manipulando%20DOM%20com%20textContent,%20innerText%20e%20innerHTML&amp;body=https://emersonbroga.com/manipulando-dom-com-textcontent-innertext-e-innerhtml/">
+                   <i class="fa fa-envelope"></i>
+               </a>
+            </div>
+		</div>			</div>
+			<hr>
+					<div class="card card-profile card-plain">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="card-avatar">
+						<a href="https://emersonbroga.com/author/admin/" title="@emersonbroga"><img alt="" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/39d4ef5b0e96b58b0c61288790a51b32.jpeg" srcset="https://secure.gravatar.com/avatar/39d4ef5b0e96b58b0c61288790a51b32?s=200&amp;d=mm&amp;r=g 2x" class="avatar avatar-100 photo" height="100" width="100"></a>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<h4 class="card-title">@emersonbroga</h4>
+					<p class="description">Formado em Desenvolvimento de Sistemas pela Faculdade Pitágoras e pós-graduado em Gestão Estratégica de Marketing pela PUC Minas trabalhei em diversas agências e atualmente trabalho em projetos internacionais como FOX.com, FXNetworks.com, NatGeo.com entre outros.
+
+Saiba mais em <a href="https://emersonbroga.com/e/sobre/">https://emersonbroga.com/e/sobre/</a>.</p>
+				</div>
+			</div>
+		</div>
+		
+<div id="disqus_thread"><iframe id="dsq-app3592" name="dsq-app3592" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+		</div>
+		</div>	<div class="col-md-3 blog-sidebar-wrapper col-md-offset-1 ">
+		<aside id="secondary" class="blog-sidebar" role="complementary">
+			<div id="search-4" class="widget widget_search"><form role="search" method="get" class="search-form form-group" action="https://emersonbroga.com/">
+				<label class="label-floating is-empty form-group">
+					<span class="screen-reader-text">Pesquisar por:</span>
+					<label class="control-label"> Pesquisar … </label><input type="search" class="search-field form-control" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Pesquisar">
+			</form></div><div id="custom_html-3" class="widget_text widget widget_custom_html"><h5>Redes sociais</h5><div class="textwidget custom-html-widget"><ul class="sidebar-social">
+  <li class="button facebook"><a href="https://www.facebook.com/emersonbrogadev/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+  <li class="button twitter"><a href="https://twitter.com/emersonbrogadev/" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+  <li class="button instagram"><a href="https://www.instagram.com/emersonbrogadev/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+  <li class="button youtube"><a href="http://www.youtube.com/c/EmersonBroga?sub_confirmation=1" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+  <li class="button github"><a href="https://github.com/emersonbrogadev/" target="_blank" rel="noopener noreferrer">GitHub</a></li>  
+  <li class="button participe"><a href="https://emersonbroga.com/e/participe/" target="_blank" rel="noopener noreferrer">Participe!</a></li>  
+	<li class="button facebook"><a href="https://www.linkedin.com/company/emersonbrogadev/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+	
+</ul></div></div><div id="tag_cloud-3" class="widget widget_tag_cloud"><h5>Tags</h5><div class="tagcloud"><a href="https://emersonbroga.com/tag/bitbucket/" class="tag-cloud-link tag-link-494 tag-link-position-1" style="font-size: 13.25pt;" aria-label="bitbucket (5 itens)">bitbucket</a>
+<a href="https://emersonbroga.com/tag/broga/" class="tag-cloud-link tag-link-42 tag-link-position-2" style="font-size: 17.1pt;" aria-label="broga (9 itens)">broga</a>
+<a href="https://emersonbroga.com/tag/coordenadas/" class="tag-cloud-link tag-link-320 tag-link-position-3" style="font-size: 10.1pt;" aria-label="coordenadas (3 itens)">coordenadas</a>
+<a href="https://emersonbroga.com/tag/developer/" class="tag-cloud-link tag-link-499 tag-link-position-4" style="font-size: 14.475pt;" aria-label="developer (6 itens)">developer</a>
+<a href="https://emersonbroga.com/tag/emersonbroga/" class="tag-cloud-link tag-link-488 tag-link-position-5" style="font-size: 15.35pt;" aria-label="emersonbroga (7 itens)">emersonbroga</a>
+<a href="https://emersonbroga.com/tag/emersonbrogadev/" class="tag-cloud-link tag-link-489 tag-link-position-6" style="font-size: 15.35pt;" aria-label="emersonbrogadev (7 itens)">emersonbrogadev</a>
+<a href="https://emersonbroga.com/tag/es6/" class="tag-cloud-link tag-link-429 tag-link-position-7" style="font-size: 10.1pt;" aria-label="es6 (3 itens)">es6</a>
+<a href="https://emersonbroga.com/tag/git/" class="tag-cloud-link tag-link-493 tag-link-position-8" style="font-size: 13.25pt;" aria-label="git (5 itens)">git</a>
+<a href="https://emersonbroga.com/tag/github/" class="tag-cloud-link tag-link-329 tag-link-position-9" style="font-size: 14.475pt;" aria-label="github (6 itens)">github</a>
+<a href="https://emersonbroga.com/tag/githubcampusexperts/" class="tag-cloud-link tag-link-507 tag-link-position-10" style="font-size: 13.25pt;" aria-label="githubcampusexperts (5 itens)">githubcampusexperts</a>
+<a href="https://emersonbroga.com/tag/githubdesign/" class="tag-cloud-link tag-link-506 tag-link-position-11" style="font-size: 13.25pt;" aria-label="githubdesign (5 itens)">githubdesign</a>
+<a href="https://emersonbroga.com/tag/githubeducation/" class="tag-cloud-link tag-link-505 tag-link-position-12" style="font-size: 13.25pt;" aria-label="githubeducation (5 itens)">githubeducation</a>
+<a href="https://emersonbroga.com/tag/githubpages/" class="tag-cloud-link tag-link-504 tag-link-position-13" style="font-size: 13.25pt;" aria-label="githubpages (5 itens)">githubpages</a>
+<a href="https://emersonbroga.com/tag/githubuniverse/" class="tag-cloud-link tag-link-503 tag-link-position-14" style="font-size: 13.25pt;" aria-label="githubuniverse (5 itens)">githubuniverse</a>
+<a href="https://emersonbroga.com/tag/google/" class="tag-cloud-link tag-link-53 tag-link-position-15" style="font-size: 10.1pt;" aria-label="google (3 itens)">google</a>
+<a href="https://emersonbroga.com/tag/ios/" class="tag-cloud-link tag-link-350 tag-link-position-16" style="font-size: 10.1pt;" aria-label="iOS (3 itens)">iOS</a>
+<a href="https://emersonbroga.com/tag/js/" class="tag-cloud-link tag-link-345 tag-link-position-17" style="font-size: 10.1pt;" aria-label="Javascript (3 itens)">Javascript</a>
+<a href="https://emersonbroga.com/tag/javascript/" class="tag-cloud-link tag-link-15 tag-link-position-18" style="font-size: 22pt;" aria-label="javascript (18 itens)">javascript</a>
+<a href="https://emersonbroga.com/tag/javascript30/" class="tag-cloud-link tag-link-511 tag-link-position-19" style="font-size: 10.1pt;" aria-label="javascript30 (3 itens)">javascript30</a>
+<a href="https://emersonbroga.com/tag/javascriptdeveloper/" class="tag-cloud-link tag-link-509 tag-link-position-20" style="font-size: 10.1pt;" aria-label="javascriptdeveloper (3 itens)">javascriptdeveloper</a>
+<a href="https://emersonbroga.com/tag/javascriptengineer/" class="tag-cloud-link tag-link-512 tag-link-position-21" style="font-size: 10.1pt;" aria-label="javascriptengineer (3 itens)">javascriptengineer</a>
+<a href="https://emersonbroga.com/tag/javascriptlearning/" class="tag-cloud-link tag-link-515 tag-link-position-22" style="font-size: 10.1pt;" aria-label="javascriptlearning (3 itens)">javascriptlearning</a>
+<a href="https://emersonbroga.com/tag/javascriptlover/" class="tag-cloud-link tag-link-513 tag-link-position-23" style="font-size: 10.1pt;" aria-label="javascriptlover (3 itens)">javascriptlover</a>
+<a href="https://emersonbroga.com/tag/javascripts/" class="tag-cloud-link tag-link-510 tag-link-position-24" style="font-size: 10.1pt;" aria-label="javascripts (3 itens)">javascripts</a>
+<a href="https://emersonbroga.com/tag/javascripttutorial/" class="tag-cloud-link tag-link-514 tag-link-position-25" style="font-size: 10.1pt;" aria-label="javascripttutorial (3 itens)">javascripttutorial</a>
+<a href="https://emersonbroga.com/tag/jquery/" class="tag-cloud-link tag-link-386 tag-link-position-26" style="font-size: 17.8pt;" aria-label="jquery (10 itens)">jquery</a>
+<a href="https://emersonbroga.com/tag/node/" class="tag-cloud-link tag-link-496 tag-link-position-27" style="font-size: 15.35pt;" aria-label="node (7 itens)">node</a>
+<a href="https://emersonbroga.com/tag/nodejs/" class="tag-cloud-link tag-link-375 tag-link-position-28" style="font-size: 17.1pt;" aria-label="nodejs (9 itens)">nodejs</a>
+<a href="https://emersonbroga.com/tag/objective-c/" class="tag-cloud-link tag-link-189 tag-link-position-29" style="font-size: 10.1pt;" aria-label="Objective-C (3 itens)">Objective-C</a>
+<a href="https://emersonbroga.com/tag/php/" class="tag-cloud-link tag-link-343 tag-link-position-30" style="font-size: 18.5pt;" aria-label="PHP (11 itens)">PHP</a>
+<a href="https://emersonbroga.com/tag/programacao/" class="tag-cloud-link tag-link-508 tag-link-position-31" style="font-size: 13.25pt;" aria-label="programacao (5 itens)">programacao</a>
+<a href="https://emersonbroga.com/tag/programador/" class="tag-cloud-link tag-link-500 tag-link-position-32" style="font-size: 14.475pt;" aria-label="programador (6 itens)">programador</a>
+<a href="https://emersonbroga.com/tag/programar/" class="tag-cloud-link tag-link-501 tag-link-position-33" style="font-size: 14.475pt;" aria-label="programar (6 itens)">programar</a>
+<a href="https://emersonbroga.com/tag/prototype/" class="tag-cloud-link tag-link-497 tag-link-position-34" style="font-size: 14.475pt;" aria-label="prototype (6 itens)">prototype</a>
+<a href="https://emersonbroga.com/tag/react/" class="tag-cloud-link tag-link-413 tag-link-position-35" style="font-size: 16.225pt;" aria-label="react (8 itens)">react</a>
+<a href="https://emersonbroga.com/tag/servidor/" class="tag-cloud-link tag-link-79 tag-link-position-36" style="font-size: 11.85pt;" aria-label="servidor (4 itens)">servidor</a>
+<a href="https://emersonbroga.com/tag/soudev/" class="tag-cloud-link tag-link-94 tag-link-position-37" style="font-size: 17.8pt;" aria-label="soudev (10 itens)">soudev</a>
+<a href="https://emersonbroga.com/tag/svn/" class="tag-cloud-link tag-link-168 tag-link-position-38" style="font-size: 14.475pt;" aria-label="svn (6 itens)">svn</a>
+<a href="https://emersonbroga.com/tag/tools/" class="tag-cloud-link tag-link-410 tag-link-position-39" style="font-size: 8pt;" aria-label="tools (2 itens)">tools</a>
+<a href="https://emersonbroga.com/tag/versionamento/" class="tag-cloud-link tag-link-495 tag-link-position-40" style="font-size: 13.25pt;" aria-label="versionamento (5 itens)">versionamento</a>
+<a href="https://emersonbroga.com/tag/web/" class="tag-cloud-link tag-link-342 tag-link-position-41" style="font-size: 16.225pt;" aria-label="Web (8 itens)">Web</a>
+<a href="https://emersonbroga.com/tag/webdev/" class="tag-cloud-link tag-link-498 tag-link-position-42" style="font-size: 14.475pt;" aria-label="webdev (6 itens)">webdev</a>
+<a href="https://emersonbroga.com/tag/windows/" class="tag-cloud-link tag-link-9 tag-link-position-43" style="font-size: 10.1pt;" aria-label="Windows (3 itens)">Windows</a>
+<a href="https://emersonbroga.com/tag/wordpress/" class="tag-cloud-link tag-link-347 tag-link-position-44" style="font-size: 18.5pt;" aria-label="Wordpress (11 itens)">Wordpress</a>
+<a href="https://emersonbroga.com/tag/zend-framework/" class="tag-cloud-link tag-link-346 tag-link-position-45" style="font-size: 13.25pt;" aria-label="Zend Framework (5 itens)">Zend Framework</a></div>
+</div><div id="custom_html-2" class="widget_text widget widget_custom_html"><h5>Veja também</h5><div class="textwidget custom-html-widget"><p>
+  <a href="http://bit.ly/jscoinbase" target="_blank" rel="noopener noreferrer"><img draggable="false" class="emoji" alt="💰" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f4b0.svg"> Bitcoin</a>
+</p>
+<p>
+  <a href="http://bit.ly/ebkhost" target="_blank" rel="noopener noreferrer"><img draggable="false" class="emoji" alt="🇧🇷" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f1e7-1f1f7.svg"> Hospedagem BR</a>
+</p>
+<p>
+  <a href="http://bit.ly/100_do" target="_blank" rel="noopener noreferrer"><img draggable="false" class="emoji" alt="🇺🇸" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f1fa-1f1f8.svg"> Hospedagem Gringa</a>
+</p>
+<p>
+  <a href="http://bit.ly/ebtransfer" target="_blank" rel="noopener noreferrer"><img draggable="false" class="emoji" alt="💸" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f4b8.svg"> Enviar Dinheiro</a>
+</p>
+
+<p>
+  <a href="http://bit.ly/picpayeb" target="_blank" rel="noopener noreferrer"><img draggable="false" class="emoji" alt="👯‍♂️" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f46f-200d-2642-fe0f.svg"> Enviar Dinheiro para amigos</a>
+</p>
+<p>
+  <a href="http://bit.ly/ebairbnb" target="_blank" rel="noopener noreferrer"><img draggable="false" class="emoji" alt="🏩" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f3e9.svg"> Hospede-se</a>
+</p>
+
+<p>
+	<a href="http://bit.ly/ebnord" target="_blank" rel="noopener noreferrer"><img draggable="false" class="emoji" alt="🔐" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/1f510.svg">Privacidade Online</a>
+</p></div></div>		</aside><!-- .sidebar .widget-area -->
+	</div>
+			</div>
+</article>
+
+		</div>
+	</div>
+</div>
+
+			<div class="section related-posts">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="hestia-title text-center">Posts relacionados</h2>
+							<div class="row">
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																							<div class="card-image">
+													<a href="https://emersonbroga.com/criando-um-botao-de-copiar-ctrl-c-com-javascript/" title="Criando um botão de Copiar (CTRL + C) com JavaScript">
+														<picture width="360" height="240" class="attachment-hestia-blog size-hestia-blog wp-post-image">
+<source type="image/webp" srcset="https://emersonbroga.com/wp-content/uploads/2019/07/ctrl-c-javascript-360x240.jpg.webp">
+<img src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/ctrl-c-javascript-360x240.jpg" alt="CTRL + C / CTRL + V com JavaScript">
+</picture>
+													</a>
+												</div>
+																						<div class="content">
+												<h6 class="category text-info"><a href="https://emersonbroga.com/category/js/" title="Ver todos os posts em Javascript">Javascript</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="https://emersonbroga.com/criando-um-botao-de-copiar-ctrl-c-com-javascript/" title="Criando um botão de Copiar (CTRL + C) com JavaScript" rel="bookmark">
+														Criando um botão de Copiar (CTRL + C) com JavaScript													</a>
+												</h4>
+												<p class="card-description">Olá, pessoal! Mais uma dica rápida de javascript aqui hoje. Se você quiser criar um botão de copiar, aquele famoso CTRL + C com JavaScript você pode fazer isso de forma rápida e fácil, deixando<a class="moretag" href="https://emersonbroga.com/criando-um-botao-de-copiar-ctrl-c-com-javascript/"> Leia mais…</a></p>
+											</div>
+										</div>
+									</div>
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																							<div class="card-image">
+													<a href="https://emersonbroga.com/como-usar-promises-no-javascript/" title="[Vídeo] Como usar Promises no Javascript">
+														<picture width="360" height="240" class="attachment-hestia-blog size-hestia-blog wp-post-image">
+<source type="image/webp" srcset="https://emersonbroga.com/wp-content/uploads/2018/12/como-usar-promises-no-javascript-360x240.jpg.webp">
+<img src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/como-usar-promises-no-javascript-360x240.jpg" alt="Como usar Promises no Javascript">
+</picture>
+													</a>
+												</div>
+																						<div class="content">
+												<h6 class="category text-info"><a href="https://emersonbroga.com/category/js/" title="Ver todos os posts em Javascript">Javascript</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="https://emersonbroga.com/como-usar-promises-no-javascript/" title="[Vídeo] Como usar Promises no Javascript" rel="bookmark">
+														[Vídeo] Como usar Promises no Javascript													</a>
+												</h4>
+												<p class="card-description">Melhore o seu javascript aprendendo a promises. Veja como criar uma promise e como utilizar uma ou várias promises. Endenta o resolve/reject e o then/catch.</p>
+											</div>
+										</div>
+									</div>
+																	<div class="col-md-4">
+										<div class="card card-blog">
+																							<div class="card-image">
+													<a href="https://emersonbroga.com/20190519-resumo-da-semana-javascript-node-react/" title="Resumo da Semana">
+														<picture width="360" height="240" class="attachment-hestia-blog size-hestia-blog wp-post-image">
+<source type="image/webp" srcset="https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335-360x240.jpeg.webp, https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335-300x201.jpeg.webp 300w, https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335-768x513.jpeg.webp 768w, https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335-1024x684.jpeg.webp 1024w, https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335.jpeg.webp 1348w" sizes="(max-width: 360px) 100vw, 360px">
+<img src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/photo-1506784365847-bbad939e9335-360x240.jpeg" alt="" srcset="https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335-360x240.jpeg 360w, https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335-300x201.jpeg 300w, https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335-768x513.jpeg 768w, https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335-1024x684.jpeg 1024w, https://emersonbroga.com/wp-content/uploads/2019/05/photo-1506784365847-bbad939e9335.jpeg 1348w" sizes="(max-width: 360px) 100vw, 360px">
+</picture>
+													</a>
+												</div>
+																						<div class="content">
+												<h6 class="category text-info"><a href="https://emersonbroga.com/category/js/" title="Ver todos os posts em Javascript">Javascript</a> </h6>
+												<h4 class="card-title">
+													<a class="blog-item-title-link" href="https://emersonbroga.com/20190519-resumo-da-semana-javascript-node-react/" title="Resumo da Semana" rel="bookmark">
+														Resumo da Semana													</a>
+												</h4>
+												<p class="card-description">Olá, pessoal! Nesse post de hoje, quero apenas deixar registrado o que foi compartilhado essa semana. for Entenda como funciona o loop “for” no javascript! while Entenda como funciona o loop “while” no javascript! do…while<a class="moretag" href="https://emersonbroga.com/20190519-resumo-da-semana-javascript-node-react/"> Leia mais…</a></p>
+											</div>
+										</div>
+									</div>
+																							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-wrapper">
+						<footer class="footer footer-black footer-big">
+						<div class="container">
+																<div class="hestia-bottom-footer-content"><ul class="footer-menu pull-left"><li class="page_item page-item-2"><a href="https://emersonbroga.com/sobre/">Sobre</a></li>
+</ul>
+					<div class="copyright pull-right">
+				Hestia | Desenvolvido por <a href="https://themeisle.com/" rel="nofollow">ThemeIsle</a>			</div>
+			</div>			</div>
+					</footer>
+				</div>
+	</div>
+		<button class="hestia-scroll-to-top hestia-fade">
+			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+		</button>
+		<script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"emersoncarvalho"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/comment_count.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.17"},"disqusIdentifier":"918 https:\/\/emersonbroga.com\/?p=918","disqusShortname":"emersoncarvalho","disqusTitle":"Manipulando DOM com textContent, innerText e innerHTML","disqusUrl":"https:\/\/emersonbroga.com\/manipulando-dom-com-textcontent-innertext-e-innerhtml\/","postId":"918"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/comment_embed.js.download"></script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/custom.js.download"></script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/js.cookie.min.js.download"></script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/custom-cookie.js.download"></script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/bootstrap.min.js.download"></script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/core.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var requestpost = {"ajaxurl":"https:\/\/emersonbroga.com\/wp-admin\/admin-ajax.php","disable_autoslide":"","masonry":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/script.min.js.download"></script>
+<script type="text/javascript" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/wp-embed.min.js.download"></script>
+
+
+
+<!-- Dynamic page generated in 0.505 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-08-09 17:00:04 -->
+
+<!-- super cache --><iframe style="display: none;" src="./__Manipulando DOM com textContent, innerText e innerHTML - Emerson Brôga_files/saved_resource(1).html"></iframe></body></html>

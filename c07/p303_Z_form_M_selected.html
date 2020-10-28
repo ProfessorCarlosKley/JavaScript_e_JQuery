@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(":selected").css("background-color", "red");
+        });
+    </script>
+</head>
+
+<body>
+    <h1>$(":selected") Localiza elementos selecionados"</h1>
+    <form action="">
+        Name: <input type="text" name="user"><br>
+        Car:
+        <select>
+            <option>Volvo</option>
+            <option selected="selected">Saab</option>
+            <option>Mercedes</option>
+            <option>Audi</option>
+        </select>
+    </form>
+
+</body>
+
+</html>

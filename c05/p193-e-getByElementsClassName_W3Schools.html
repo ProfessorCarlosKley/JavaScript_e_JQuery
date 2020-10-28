@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="example">
+        <p>P elemento na primeira div com class="example". Div's index is 0.</p>
+    </div>
+
+    <div class="example color">
+        <p>P elemento na primeira div com class="example color". Div's index is 0.</p>
+    </div>
+
+    <div class="example color">
+        <p>P elemento na segunda div com class="example color". Div's index is 1.</p>
+    </div>
+
+    <p>Clique no botão para alterar a cor de fundo do primeiro elemento div com as classes "exemple color" ".
+    </p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <p><strong>Note:</strong>
+        O método getElementsByClassName () não é suportado no Internet Explorer 8 e versões anteriores
+    </p>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementsByClassName("example color");
+            x[0].style.backgroundColor = "#40E0D0";
+        }
+    </script>
+
+</body>
+
+</html>

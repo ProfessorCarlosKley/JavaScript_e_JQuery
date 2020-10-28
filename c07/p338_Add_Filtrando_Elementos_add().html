@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/jquery.color.js"></script>
+  <!--Este plug-in instala um cssHook que permite que o .animate ()
+   do jQuery seja animado entre duas cores.-->
+  <script>
+    $(document).ready(function () {
+      $("h1").add("p").add("span").css("background-color", "#FFDEAD");
+      /**
+       * O método add permite adicionar uma nova seleção a uma
+       * já existente. SElecionamos <h1> e extendemos a selação
+       * para os elementos <p> e <span>
+      */
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <h1>Bem vindo</h1>
+  <p>Um elemento p.</p>
+  <p>Outro elemento p.</p>
+  <span>Um elemento span.</span>
+  <span>Outro elemento span.</span><br><br>
+  <div>Este exemplo adiciona o mesmo estilo css para os elementos p e span, como o elemento h1 existente.</div>
+
+</body>
+
+</html>

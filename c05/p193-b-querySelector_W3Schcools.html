@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h3>H3 elemento</h3>
+        <p>Eu sou um elemento p, meu pai é um elemento div.</p>
+        <p>Eu sou um elemento p, irmão do p anterior, pois meu pai é a mesma div.</p>
+    </div>
+
+    <div>
+        <h3>H3 elemento</h3>
+        <p>Eu sou um elemento p, meu pai também é um elemento div, mas, outra div.</p>
+    </div>
+
+    <p>
+        Clique no botão para alterar a cor de segundo plano do primeiro elemento p no documento em que o pai é um
+        elemento div.</p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <script>
+        function myFunction() {
+            var x = document.querySelector("div > p");
+            //seta o primeiro elemento p pertecente (filho) de uma div.
+            x.style.backgroundColor = "#fafaaa";
+        }
+    </script>
+
+</body>
+
+</html>

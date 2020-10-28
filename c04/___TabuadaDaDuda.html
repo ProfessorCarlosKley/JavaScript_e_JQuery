@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tabuada</title>
+  <link rel="stylesheet" href="css/cTabuada.css" />
+</head>
+
+<body>
+  <form method="post" id="fContato" action="mailto:karloskley@hotmail.com" oninput="fatorMultiplicacao();">
+    Multiplicar por:<br> <input type="number" name="multiplicador" id="multiplicador" min="1" max="10" value="0"
+      onchange="gerarTabuada();" />
+
+  </form>
+  <div class="container">
+    <div id="rTabuadaVezes"></div>
+    <div id="rTabuadaMais"></div>
+  </div>
+
+  <script src="js/tabuada.js"></script>
+</body>
+
+</html>

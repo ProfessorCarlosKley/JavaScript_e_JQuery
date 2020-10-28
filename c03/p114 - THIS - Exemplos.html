@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <style>
+		  h1{
+			  font-family:Arial, Helvetica, sans-serif;
+			  color: brown;
+			  background-color: cornsilk;
+			  font-size: 1.2em;
+		  }
+	  </style>
+  </head>
+   
+  <body> 
+	<h1>FUNÇÃO NO ESCOPO GLOBAL:</h1>
+	<p>
+	- Função criada no nível superior de um Script. (Isto é, não dentro de
+	outro objeto ou função. Então, ela está no Escopo Global ou Contxto Global.
+	</p>
+	<p>
+	- O Objeto padrão nesse contexto é o objeto Window. Portanto, quando this é utilizado dentro
+	de uma função no contexto global, ela se refere ao objeto window. p.114;
+	</p>
+	<p>
+	- Nesse sentido, a palavra chave this faz referência ao objeto em que a função é criada.;
+	</p>
+	<h1>VARIÁVEIS NO ESCOPO GLOBAL:</h1>
+	<p>
+	- Todas as variáveis globais, tabmém tornam se propriedades do objeto window.
+	- Portanto, quando uma função está no contexo global, você poode acessar as variáveis globais usndo 
+	o objeto window. 
+	</p>
+	<h1>UM MÉTODO DE UM OBJETO:</h1>
+	<p>
+	- Quando uma furnção é definida dentro de um objeto, ela torna-se um método. Em um método, this
+	refere-se ao objeto que o contém. Na função getArea() this refere-se ao objeto calculaArea. calculaArea
+	contem a função, logo é pai de this.
+	</p>
+	<h1>EXPRESSÃO DE FUNÇÃO COMO MÉTODO:</h1>
+	<p>
+	- Se uma função nomeada (expressão de função) foi definida no ESCOPO GLOBAL, e, ela é então
+	usada como um método de um objeto. Nesse caso, This refere-se ao objeto em que ela está contida.
+	Ver última função do script.
+	</p>	
+	<script>
+//*********************************************************************************
+/*Função no Escopo Global - this refere-se a window. p. 114. Ex. 1*/	
+function windowSize(){
+	var largura = this.innerWidth;
+	var altura = this.innerHeight;
+		return ["Largura: " + largura, " - Altura: " + altura];
+	}
+//*********************************************************************************	
+/*Vaariável no Escopo Global p. 114. Ex. 2*/
+var LargWindow = 600; //variável global, propriedade de window.
+	var shape = {LargWindow: 300};
+	//Esssa propriedade LargWindow pertence ao objeto shape e não a window. Ela não é global.
+
+	var showWidth = function(){
+		document.write("<br><br> Variável Global LargWindow = " + this.LargWindow);
+		//this aqui refere-se a var LargWindow, pois, esta agora pertence a window por ser global.
+	}
+//*********************************************************************************
+/*Um método de um objeto. p. 115. Ex. 3*/	
+var cacluaArea = {//objeto
+		width: 600,
+		height: 400,
+		getArea: function(){ //Expressão de função;
+			return this.width * this.height;
+		}
+	};
+	//A palavra chave this aqui refere-se ao objeto calculaArea, isso seria o mesmo que escrever:
+	//calculaAra.width * calculaArea.height;
+//*********************************************************************************
+/*Expressões de Funções como Método. p. 115. Ex. 4*/	
+
+var widthW = 1200; //var global. 
+var Obj = {widthW: 300}; //300 é o valor de widthW no objeto. 
+
+var showWidthW = function(){ //expressão de função global
+	document.write("<br><br> A largura aqui é a da variável do objeto:" + this.widthW+" <br><br>");
+	//this está no escopo do objeto, pois a função foi chamada com uma propriedade do obj.
+	//Quando chamo embaixo com o Obj.getWidth ela passa a pertencer ao objeto e fecha o Escopo.
+};
+//Apesar da expressão de função ser global, ela será inicializada através do objeto Obj.
+
+Obj.getWidth = showWidthW; //aqui eu crio no objeto uma propriedade getWidth que recebe a função.
+//Nesse caso, a função agor está no escopo do objeto, e this refere-se às propriedades deste objeto.
+Obj.getWidth(); //Recupera o valor de getWidthW() que agora tem 300.
+
+
+
+	//A palavra chave this aqui refere-se ao objeto calculaArea, isso seria o mesmo que escrever:
+	//calculaAra.width * calculaArea.height;
+//*********************************************************************************
+	document.write("Dimensoes da janela requerida com this.<br>");
+	document.write(windowSize());
+	
+	showWidth(); //imprime o valor 600;
+
+	</script>
+  </body>
+</html>

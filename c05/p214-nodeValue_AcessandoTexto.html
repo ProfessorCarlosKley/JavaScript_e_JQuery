@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<style>
+    p {
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <ul>
+        <li id="one"><em>Fresh</em>Figs</li>
+    </ul>
+    <p id="caixa">§ Clique no botão para obter o nodeValue:</p>
+
+    <button onclick="myFunction()">
+
+        Clique me</button>
+    <p>
+        <p>Ver diagrama abaixo:</p>
+        <img src="images/diagrama.jpg">
+        <script>
+            function myFunction() {
+
+                var texto = document.getElementById("one").firstChild.nextSibling.nodeValue;
+                document.getElementById("caixa").innerText = "nodeText do elemento próximo irmão do primeiro filho de li = " + texto;
+
+            }
+        </script>
+        <p>
+            document.getElementById("one").firstChild.nextSibling.nodeValue;
+            <br>
+            1. O nó do elemento li é selecinado usnado o método getElementById;
+            <br>
+            2. O primeiro filho de li é o elemento em;
+            <br>
+            3. O nó de texto é o próximo irmão deste elemento em. Nota: este, também é o último filho.
+            <br>
+            4. Você já tem o no de texto e pode acessar seu conteúdo com nodValue.
+
+        </p>
+</body>
+
+</html>

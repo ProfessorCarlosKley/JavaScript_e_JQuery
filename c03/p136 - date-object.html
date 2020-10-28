@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JavaScript &amp; jQuery - Chapter 3: Functions, Methods &amp; Objects - Date Object</title>
+  <style>
+    #footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #adffda;
+    }
+
+    #footer p {
+      padding: 10px;
+      margin: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Objeto Date()</h1>
+
+  <div id="footer"></div>
+  <script src="js/date-object.js"></script>
+
+  <script>
+    var agora = new Date();
+    var passado = new Date('Dec 22, 2000 15:45:34');
+    var nascimento = new Date('1976, 11, 13');
+    var diference = agora.getTime() - nascimento.getTime();
+    //cria today com a data padrão.
+    document.write("Objeto data inicializado com valores padrao: " + agora + "<br>");
+    document.write("Objeto data inicializado com uma dada anterior: " + passado + "<br>");
+    document.write("Objeto data inicializado com meu aniversário: " + nascimento + "<br>");
+    document.write("Retornando dia do mês (data atual): " + agora.getDate() + "<br>");
+    document.write("Retornando dia do mês de meu aniversário: " + nascimento.getDate() + "<br>");
+    document.write("Retornando dia da semana do meu nascimento: " + nascimento.getDay() + "<br>");
+    //getDay() devolve o dia da semana, inteiro entre 0 e 6 (0 para Domingo).
+    document.write("Retornando mês do meu nascimento: " + ((nascimento.getMonth()) + 1) + "<br>");
+    //getMonth() retorna um intervalor de 0 a 11 corresondendo 12 meses. Assim, faz-se necessário
+    //somar 1.
+    document.write("Retornando ano do meu aniversário (4 dígitos): " + nascimento.getFullYear() + "<br>");
+    document.write("Retornando ano do meu aniversário (2 dígitos): " + nascimento.getYear() + "<br>");
+    document.write("Retornando data nascimento String: " + nascimento.toDateString() + "<br>");
+
+    document.write("Retornando hora min e seg do bojeto agora: " + agora.getHours() + ":"
+      + agora.getMinutes() + ":" + agora.getSeconds() + "<br>");
+
+    passado.setFullYear('2025');
+    document.write("Alterando o ano da data anterior de (2000) para (2025): " + passado + "<br>");
+
+    //Diferença entre duas datas.
+    //A diferença é retornadada em milisegundos... 
+    //31556900000 = milissegundos em um ano.
+
+    document.write("Diferença entre nasc e atual (em milissegundos) :" + diference + "<br>");
+    diference = Math.floor((diference / 31556900000));
+
+    document.write("Milessegundos convertido em anos: " + diference + "<br");
+
+
+
+
+  </script>
+</body>
+
+</html>

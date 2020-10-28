@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div > span").css("background-color", "yellow");
+            //Todos os elementos span que são filhos diretos de um elemento <div>
+        });
+    </script>
+</head>
+
+<body>
+    <1>Seleciona um elemento span que seja filho direto de seu pai. Não pode ser neto.</1>
+    <h2>What will $("div > span") select?</h2>
+
+    <h4>This div element has two direct child elements, p and span:</h4>
+
+    <div style="border:1px solid black;padding:10px;">
+        <p>This is a paragraph.</p>
+        <span>This is a text inside a span.</span>
+    </div>
+
+    <h4>This div element has one direct child element, p:</h4>
+
+    <div style="border:1px solid black;padding:10px;">
+        <p>This is a paragraph. <span>:: Aqui um span filho de p que é filho da div::</span></p>
+        <p>Por isso, esse span não é selecionado. </p>
+    </div>
+
+</body>
+
+</html>

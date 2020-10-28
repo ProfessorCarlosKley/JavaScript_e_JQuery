@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        h1 {
+            background-color: #98FB98;
+            color: darkslateblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            background-color: darkslategrey;
+            color: white;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+
+                $("div:has(p)").css("background-color", "#aaccff");
+                //Seleciona todos os elementos divs que contém um especificado dentro.
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>FILTROS BÁSICOS - :has - p. 303</h1>
+    <h2>Clique no botão abaixo para seleiconar todas as divs que contém o elemento p</h2>
+
+    <h3>Klei</h3>
+    <h4>Header 4</h4>
+    <h5>Header 5</h5>
+    <h6>Header 6</h6>
+    <div>
+        <p>Um</p>
+    </div>
+    <p>Dois</p>
+    <p>Três</p>
+    <div></div>
+    <div>
+        <p>Klei</p>
+        <p>Cinco</p>
+    </div>
+    <p>Klei</p>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <button>Clique para obter os elementos.</button>
+
+</body>
+
+</html>

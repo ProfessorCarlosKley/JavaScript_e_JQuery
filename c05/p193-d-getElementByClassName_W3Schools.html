@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div class="example">Primeiro elemento div com a classe ="example".</div>
+        <div class="example">Segundo elemento div com a classe ="example".</div>
+        <div class="example">Terceiro elemento div com a classe ="example".</div>
+        <div class="example">Quarto elemento div com a classe ="example".</div>
+        <div class="example">Quinto elemento div com a classe ="example".</div>
+    </div>
+    <p>Clique no botão para alterar o texto do primeiro elemento div com class = "example" (index 0).</p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <p><strong>Note:</strong> O método getElementsByClassName () não é suportado no Internet Explorer 8 e versões
+        anteriores.</p>
+
+    <script>
+        function myFunction() {
+
+            var x = document.getElementsByClassName("example");
+            x[0].innerHTML = "1º elemento alterado para: Programador:";
+            x[1].innerHTML = "2º elemento alterado para: CARLOS KLEI:";
+            for (i = 0; i < x.length; i++) {
+                x[i].style.background = "#ffdddd";
+                if (i > 1) {
+                    x[i].style.background = "#ffffaa";
+                }
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

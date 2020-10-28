@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("#div1").fadeTo("slow", 0.15);
+        $("#div2").fadeTo("slow", 0.45);
+        $("#div3").fadeTo("slow", 0.6);
+        $("#div4").fadeTo(1000, 0.7);
+        //Altera a opacidade dos elementos seleiconados...
+        //Sintaxe: $(selector).fadeTo(speed,opacity,easing,callback)
+        //spped: Velocidade do efeito de desbotamento. (milissegundos).
+        //opacity: Especifica a opacidade à qual desaparecer. Deve ser um número entre 0,00 e 1,00
+        //easing: Especifica a velocidade do elemento em diferentes pontos da animação. O valor padrão é "swing".
+        // - easing: "swing" - moves slower at the beginning/end, but faster in the middle
+        // - easing: "linear" - moves in a constant speed
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <p>Demonstrate fadeTo() with different parameters.</p>
+
+  <button>Click to fade boxes</button><br><br>
+  <div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+  <div id="div2" style="width:80px;height:80px;background-color:green;"></div><br>
+  <div id="div3" style="width:80px;height:80px;background-color:blue;"></div><br>
+  <div id="div4" style="width:80px;height:80px;background-color:black;"></div><br>
+
+</body>
+
+</html>

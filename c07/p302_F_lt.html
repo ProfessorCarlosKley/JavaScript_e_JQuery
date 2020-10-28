@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        h1 {
+            background-color: #98FB98;
+            color: darkslateblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            background-color: darkslategrey;
+            color: white;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+
+                $("p:lt(3)").css("background-color", "#ccaaff");
+                //Seleciona elementos com o número de índice menor que o do parâmetro.
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>FILTROS BÁSICOS - :lt() - p. 302</h1>
+    <h2>Seleciona elementos com o número de índice menor que o do parâmetro.</h2>
+    <h2>Em poutras palavras: todos antes deste.</h2>
+    <p>Um</p>
+    <p>Dois</p>
+    <p>Três</p>
+    <p>Todos antes deste</p>
+    <p>Cinco</p>
+    <p>Seis</p>
+
+    <button>Clique me para selecionar antes do 3º §.</button>
+
+</body>
+
+</html>

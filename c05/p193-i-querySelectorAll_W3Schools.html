@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1 class="example">querySelectorAll() - Obtenha todos os elementos do documento com class = "example":</h1>
+    <h2 class="example">Um cabeçalho com class = "example"</h2>
+    <p class="example">Um parágrafao com class="example".</p>
+
+    <p>Clique aqui para adicinar background a todos elementos com class="example".</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+
+
+    <script>
+        function myFunction() {
+            var x, i;
+            x = document.querySelectorAll(".example");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.backgroundColor = "#ffaddd";
+            }
+        }
+        /**
+         * Retorna uma lista de elementos presentes no documento
+         *  (usando ordenação em profundidade, pré-ordenada e transversal
+         * dos nós do documento) que coincidam com o grupo de seletores
+         * especificado. O objeto retornado é uma NodeList.
+         * A funcao querySelectorAll() permite que os seletores CSS sejam
+         * usados no JavaScript, veja:
+         * var elem = document.querySelectorAll('p');
+         * var elem = document.querySelectorAll('p, h1');
+         * var elem = document.querySelectorAll('.warning');
+         * var elem = document.querySelectorAll('#nav');
+         * var elem = document.querySelectorAll('span.fatal.error ');
+        */
+    </script>
+
+
+</body>
+
+</html>

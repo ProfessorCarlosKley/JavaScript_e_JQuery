@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div ~ p").css("background-color", "yellow");
+            //Todos os elementos <p> que são irmãos de um elemento <div>
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>$("div ~ p") Encontra todos os elemntos p irmãos de uma div</h2>
+
+    <p>Este é um elemento p (não será selecionado).</p>
+    <div style="border:1px solid black;padding:10px;">Este é um elemento div.</div>
+    <p>Este é um elemento p</p>
+    <p>Esse é outro elemento p.</p>
+
+    <div style="border:1px solid black;padding:10px;">
+        <p>Este é um elemento p dentro de um elemento div (não será selecionado).</p>
+    </div>
+
+    <h2>Este é um cabeçalho.</h2>
+    <p>Este é um elemento p</p>
+
+
+    <div style="border:1px solid black;padding:10px;">
+        <div style="border:1px solid red;padding:10px;">Div dentro de outra Div.</div>
+        <p>Este é um elemento p dentro de um elemento div.
+            este elemento foi pintado porque dentro da div ele é irmão de uma outra div intera.
+        </p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/index-numbers.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(":radio").wrap("<span style='background-color:red'>");
+            //wrap = embrulho, o envólucro do radio.
+        });
+    </script>
+</head>
+
+<body>
+    <h1>$(":radio") Seleiciona elementos input type="radio"</h1>
+    <form action="">
+        Name: <input type="text" name="user"><br>
+        Male:<input type="radio" name="sex" value="m"><br>
+        Female<input type="radio" name="sex" value="f"><br>
+        <input type="submit">
+    </form>
+
+    <p>Note: We use jQuerys .wrap method to highlight the selected elements, because Firefox does not support background
+        color on radiobuttons.</p>
+
+</body>
+
+</html>

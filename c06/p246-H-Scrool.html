@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .test {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body style="height:1500px">
+
+
+    <p>Role a página até scrool ficar com valor > 50, ai parágrafo ficará amarelo.</p>
+    <p id="myP" style="position:fixed">
+        <!--position:fixed = Parágrafo fixo.-->
+        O que é Lorem Ipsum?
+        Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado
+        desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um
+        livro
+        de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração
+        eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou
+        decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de
+        editoração eletrônica como Aldus PageMaker.
+    </p>
+
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        function myFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("myP").className = "test";
+                //o parágrafo passará a pertencer a classe test, definida no css.
+            } else {
+                document.getElementById("myP").className = "";
+            }
+        }
+        /*
+        scrollTop = Obtém o número de pixels em que o conteúdo de um elemento
+        é rolado horizontal e verticalmente:
+        */
+    </script>
+
+</body>
+
+</html>

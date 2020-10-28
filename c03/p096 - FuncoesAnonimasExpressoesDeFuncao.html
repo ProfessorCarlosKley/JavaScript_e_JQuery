@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+</head>
+  
+  <body>
+  <script>
+	//Expressao de função
+	/*Quando se coloca uma função onde o interpretador esperaria ver uma expressão, ela é
+	tratada como uma expressão.*/
+	var area = function (width, height){
+	//area recebe uma função, ou seja, a função é uma expressão da variável
+	return width * height;
+	};
+	
+	var cArea = area(20, 5);
+	
+	document.write("Á area de um terreno 20 x 5 é: ", cArea, " m².<br>");
+	/*
+	Uma diferença interessante entre a expressão de função e as funções IFFE é que a expressão
+	de função recebe a função (percebe-se na declaração da variável) já as funções IFFE recebe o
+	valor armazenado nas funções ao invés de armazenar a própria função, ver no exemplo 
+	p97-ExemploDeFuncao...
+	*/
+   </Script>
+  </body>
+</html>

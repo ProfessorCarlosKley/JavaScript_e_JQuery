@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>
+        Descobrindo quantos elementos com class = "example" existem no documento<br> (usando a propriedade length do
+        objeto
+        HTMLCollection):</h2>
+    <div class="example">
+        A div element com class="example"
+    </div>
+
+    <div class="example">
+        Outra div element com class="example"
+    </div>
+
+    <p class="example">O elemento p com class="example"</p>
+
+    <p>Clique no botão para descobrir quantos elementos da classe "exemplo" existem neste documento.</p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <p><strong>Note:</strong>
+        O método getElementsByClassName () não é suportado no Internet Explorer 8 e versões anteriores
+    </p>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            //retornando array contendo elementos da classe.
+            var x = document.getElementsByClassName("example");
+            //retornando comprimento do array.
+            document.getElementById("demo").innerHTML = "Encontradas " + x.length + " ocorrêcias da classe exemple.";
+        }
+    </script>
+
+</body>
+
+</html>

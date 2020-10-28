@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/jquery.color.js"></script>
+  <script>
+    $(document).ready(function () {
+      //$("p").has("span").css("background-color", "yellow");
+      $("p:has(span)").css("background-color", "yellow");
+      $("p:not(.intro)").css("background-color", "red");
+      //Selecionar <p> que contém <span>
+      /*
+      Em navegadores que suportam querySelector()/querySelectorAll()
+      :not é mais rápido que .not() e :has() é mais rápido que
+      .has().
+      */
+    });
+  </script>
+</head>
+
+<body>
+
+  <h1>Welcome to My Homepage</h1>
+
+  <p class="intro">My <span>name</span> is Donald.</p>
+  <p class="intro">I live in <span>Duckburg</span>.</p>
+  <p>My best friend is Mickey.</p>
+
+</body>
+
+</html>

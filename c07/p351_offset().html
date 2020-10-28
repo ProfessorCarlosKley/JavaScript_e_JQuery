@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <style>
+    div {
+      border: 1px #254515;
+      position: absolute;
+      top: 200px;
+      left: 400px;
+      background-color: coral;
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      margin: auto;
+
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        var x = $("div").offset();
+        alert("Top: " + x.top + "px Left: " + x.left + "px");
+
+      });
+    });
+  </script>
+</head>
+
+<body id="offsetElement">
+  <h1>.offset</h1>
+  <p>This is a paragraph.</p>
+
+
+  <button>Retorna as coordenadas da DIV</button>
+  <br>offset() retorna as coordenadas em relação ao canto superior esquerdo do objeto document.
+  <div>
+    DIV ELEMENT
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/jquery-1.11.0.js"></script>
+  <!--Script antes da tag body de fechamento, mais indicado, p. 357-->
+</body>
+
+</html>

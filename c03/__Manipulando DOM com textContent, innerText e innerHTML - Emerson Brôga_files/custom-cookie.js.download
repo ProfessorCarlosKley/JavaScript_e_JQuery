@@ -1,0 +1,86 @@
+const DEVICE_ID = 'uuid';
+const POST_IDS = 'post-ids';
+
+function getDomain(currentUrl, subdomain) {
+  const useSubdomain = subdomain || false;
+
+  let url = currentUrl.replace(/(https?:\/\/)?(www.)?/i, '');
+
+  if (!useSubdomain) {
+    url = url.split('.');
+
+    url = url.slice(url.length - 2).join('.');
+  }
+
+  if (url.indexOf('/') !== -1) {
+    return url.split('/')[0];
+  }
+
+  return url;
+}
+
+function getCookieOptions() {
+  const domain = '.' + getDomain(location.href);
+  const expires = 365;
+
+  //console.log('getCookieOptions', { domain: domain, expires: expires});
+  return { domain: domain, expires: expires};
+}
+
+function getMeta(metaName) {
+  const metas = document.getElementsByTagName('meta');
+  
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return null;
+}
+
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+function setDeviceId() {
+  if (typeof Cookies === 'undefined') return null;
+  const deviceId = uuidv4();
+  Cookies.set(DEVICE_ID, deviceId, getCookieOptions());
+  return deviceId;
+}
+
+function getDeviceId() {
+  if (typeof Cookies === 'undefined') return null;
+  return Cookies.get(DEVICE_ID);
+}
+
+function setPostIds(postIds) {
+  const data = {};
+  data.posts = postIds;
+  Cookies.set(POST_IDS, JSON.stringify(data), getCookieOptions());
+}
+
+function getPostIds() {
+  try {
+    const data = JSON.parse(Cookies.get(POST_IDS));
+    return data.posts;
+  } catch(e) {
+    return [];
+  }
+}
+
+function trackViewedPosts() {
+  const deviceId = getDeviceId() || setDeviceId();
+  const postId = getMeta('post-id');
+  const postIds = getPostIds();
+
+  if (!deviceId || !postId || postIds.indexOf(postId) !== -1) return;
+
+  postIds.push(postId);
+  setPostIds(postIds);
+}
+
+trackViewedPosts();

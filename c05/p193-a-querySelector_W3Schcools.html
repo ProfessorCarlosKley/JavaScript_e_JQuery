@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript &amp; jQuery - Chapter 5: Document Object Model - Initial Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/inicial.js"></script>
+
+</head>
+<style>
+    p {
+        font-size: 20px;
+        ;
+    }
+</style>
+
+<body>
+
+    <p>Este é um elemento p.</p>
+
+    <p>Aqui tmabém é um elemento p.</p>
+
+    <p>Clique no botão para adicionar uma cor de plano de fundo ao primeiro elemento p no documento.</p>
+
+    <p>
+        Neste documento temos várias tags p, no entanto, querySelector retorna apenas
+        o primerio elelento da Array do elemento correspondente. Pode ser uma classe
+        ou um conjunto de tags. Ele retorna o pimeiro. p. 193.
+    </p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <script>
+        function myFunction() {
+            document.querySelector("p").style.backgroundColor = "#aaf";
+        }
+    </script>
+
+</body>
+
+</html>

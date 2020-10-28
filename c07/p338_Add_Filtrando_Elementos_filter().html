@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/jquery.color.js"></script>
+  <!--Este plug-in instala um cssHook que permite que o .animate ()
+   do jQuery seja animado entre duas cores.-->
+  <script>
+    $(document).ready(function () {
+      $("#myInput").on("keyup", function () {
+        //função kleyup para o input.
+        var value = $(this).val().toLowerCase();
+        /*value recebe o valor atual do input e transforma
+         * em  toda a cadeia em minúsculas.
+         * val retorna o valor atual do elemento selecionado.*/
+        $("#myTable tr").filter(function () {
+          // filtra e devolve todos os elementos que coincidam
+          // com o seletor e também a expressão filtrada.
+          // Neste caso, filtra <tr> dentro do ID myTable.
+          // filter seleciona toda a linha pegando a string de todas
+          // as colunas e formando uma string única.  
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          //toggle = alterna entre exibir e ocultar elementos.
+
+          /**
+           * No primeiro momento, todos estão visíveis.
+           * depois, ao pressionar uma tecla, será localizado na tabela
+           * um valor qualquer que está oculto, dai toggle alterna seu
+           * estado para show() visible.
+          
+          * indexOf retorna a posição de uma subtring numa string maior
+          * retorna - -1 se o valor não for encontrado.
+          * Nsete caso, localiza o valor do input na string formada em <tr>.
+          
+          * Lembre-se que a string é de toda alinha, independente das colunas.
+          * por exemplo, a 1ª linha retorna: John Doe john@exemple.com
+            */
+          //é usado text() para exibir o texto da posição retornada
+          //com indexOf.
+
+
+        });
+      });
+    });
+  </script>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Filtrar Tabela</h2>
+  <p>Digite algo no campo de entrada para pesquisar na tabela por nomes, sobrenomes ou e-mails:</p>
+  <input id="myInput" type="text" placeholder="Search..">
+  <br><br>
+
+  <table>
+    <thead>
+      <!--Cabeçalho-->
+      <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td>João</td>
+        <td>Santana</td>
+        <td>joaosantana@hotmail.com</td>
+      </tr>
+      <tr>
+        <td>Maria Eduarda</td>
+        <td>Santos</td>
+        <td>duda@gmail.com</td>
+      </tr>
+      <tr>
+        <td>Fláveio</td>
+        <td>Carvalho</td>
+        <td>flavio@gmail.com</td>
+      </tr>
+      <tr>
+        <td>Lucas</td>
+        <td>Carvalho</td>
+        <td>lucasc@yahoo.com.br</td>
+      </tr>
+      <tr>
+        <td>Carlos Klei</td>
+        <td>Carvalho</td>
+        <td>karloskley@hotmail.com</td>
+      </tr>
+      <tr>
+        <td>Fabrizia</td>
+        <td>Carvalho</td>
+        <td>karloskley@hotmail.com</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
+
+</body>
+
+</html>

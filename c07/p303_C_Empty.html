@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        h1 {
+            background-color: #98FB98;
+            color: darkslateblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            background-color: darkslategrey;
+            color: white;
+        }
+
+        p:empty {
+            width: 100px;
+            height: 20px;
+            background: navajowhite;
+        }
+
+        h3:empty {
+            background-color: orangered;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+
+                $(":empty").css("background-color", "#ccaaff");
+                //Selecione todos os elementos qu não têm filhos..
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>FILTROS BÁSICOS - :empty- p. 303</h1>
+    <h2>Todos os elementos que não tem filhos. Elementos vazios.</h2>
+    <h3></h3>
+    <h4>Header 4</h4>
+    <h5>Header 5</h5>
+    <h6>Header 6</h6>
+    <p></p>
+    <p>Dois</p>
+    <p></p>
+    <p></p>
+    <p>Cinco</p>
+    <p>Klei</p>
+    <div></div>
+
+    <button>Clique para obter os elementos.</button>
+
+</body>
+
+</html>

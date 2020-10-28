@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        ul> :first-child {
+            /*1º elemento da lista ul.*/
+            background: yellow;
+        }
+
+        /*Mais específico: 1º filho de ul, <ol> não é considerado
+            ver ex. 208-E, que exigimos apenas ser primeiro filho independente
+            do elemento ser ul ou ol.
+            */
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+
+</body>
+
+</html>

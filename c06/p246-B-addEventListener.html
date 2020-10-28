@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>This example uses the addEventListener() method to attach a "load" event to an iframe element.</p>
+
+    <iframe id="myFrame" src="images/caca.jpg" width="600px" height="300px"></iframe>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("myFrame").addEventListener("load", myFunction);
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Iframe carregado com sucesso.";
+        }
+    </script>
+
+</body>
+
+</html>

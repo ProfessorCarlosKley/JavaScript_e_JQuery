@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>----- Evento BLUR -----</title>
+</head>
+
+<body>
+
+	Input 1: <input type="text" id="nome"><br>
+	Input 2: <input type="text" id="sobrenome"><br><br>
+
+	<div id="result">
+		Blur = Sempre que sair de algum controle. (Perder Foco)
+	</div>
+
+
+	<script type="text/javascript">
+		var nome = document.getElementById("nome");
+		var sobrenome = document.getElementById("sobrenome");
+		var secao = document.getElementById("result");
+
+		//addEventListener adiciona um evento.
+		//Quando o evento for disparado ele executa uma AÇÃO 
+		//que é definida (representada) pela função que segue.
+		nome.addEventListener("blur", function () {
+			//O evento blur é acionado quando um elemento perde foco
+			secao.innerHTML = "FUGA DO INPUT 1, ESCREVE SEU VALOR EM INPUT 2";
+			sobrenome.value = this.value;
+
+			//input recebe value e não innerXX
+			//this.value = nome.value
+		})
+		sobrenome.addEventListener("blur", function () {
+			secao.innerHTML = "FUGA DO INPUT 2, LIMPA INPUT 1";
+			nome.value = "";
+			//this.value = sobrenome.value
+
+		})
+
+
+
+	</script>
+</body>
+
+</html>

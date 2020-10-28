@@ -1,0 +1,135 @@
+
+nav.navbar { 
+  background-color: #FF5223; 
+}
+
+.home .hestia-title,
+.page-id-765 .hestia-title { 
+  opacity: 0; 
+}
+
+.sidebar-social .button {
+  margin-bottom: 6px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.sidebar-social .button a { 
+  color: #ffffff;
+  width: 100%;
+  height: 40px;
+  display: block;
+}
+.sidebar-social .button.facebook {
+  background: #3A5CA9;
+}
+.sidebar-social .button.twitter {
+  background: #1A97F0;
+}
+
+.sidebar-social .button.instagram {
+  background: #AB4496;
+}
+
+.sidebar-social .button.youtube {
+  background: #FD0001;
+}
+
+.sidebar-social .button.github {
+  background: #000000;
+}
+
+.sidebar-social .button.participe {
+  background: #FF4820;
+}
+
+.home .header-filter::before,
+.page-id-765 .header-filter::before {
+  background-color: rgba(0,0,0,0.0);
+}
+
+.pagination a,
+.pagination span {
+  min-width: 60px;
+  height: 60px;
+  font-size: 30px;
+  line-height: 60px;
+}
+
+.yt-iframe {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.yt-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+button, 
+button:hover, 
+.woocommerce .track_order button[type="submit"], 
+.woocommerce .track_order button[type="submit"]:hover, 
+div.wpforms-container .wpforms-form button[type=submit].wpforms-submit, 
+div.wpforms-container .wpforms-form button[type=submit].wpforms-submit:hover, 
+input[type="button"], input[type="button"]:hover, input[type="submit"], 
+input[type="submit"]:hover, input#searchsubmit, 
+.pagination span.current, 
+.pagination span.current:focus, 
+.pagination span.current:hover, 
+.btn.btn-primary, 
+.btn.btn-primary:link, 
+.btn.btn-primary:hover, 
+.btn.btn-primary:focus, 
+.btn.btn-primary:active, 
+.btn.btn-primary.active, 
+.btn.btn-primary.active:focus, 
+.btn.btn-primary.active:hover, 
+.btn.btn-primary:active:hover, 
+.btn.btn-primary:active:focus, 
+.btn.btn-primary:active:hover, 
+.hestia-sidebar-open.btn.btn-rose, 
+.hestia-sidebar-close.btn.btn-rose, 
+.hestia-sidebar-open.btn.btn-rose:hover, 
+.hestia-sidebar-close.btn.btn-rose:hover, 
+.hestia-sidebar-open.btn.btn-rose:focus, 
+.hestia-sidebar-close.btn.btn-rose:focus, 
+.label.label-primary, 
+.hestia-work .portfolio-item:nth-child(6n+1) .label, 
+.nav-cart .nav-cart-content .widget .buttons .button, 
+.has-background.has-accent-background-color {
+    background-color: #FF4820;
+}
+.blogpost blockquote {
+  font-family: serif;
+  border: dashed 7px #FF4820;
+}
+.blogpost blockquote em {
+  float: right;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-toggle-wrapper {
+    display: none; 
+  }
+  
+  .home .header-filter {  
+    background-size: contain;
+  }
+  .gist {
+    display: none; 
+  }
+}
+@media (min-width: 768px) {
+  .gist-desktop {display: block; }
+}
+
+
+

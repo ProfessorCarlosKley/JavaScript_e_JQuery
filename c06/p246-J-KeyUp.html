@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>----- Evento KEYUP -----</title>
+</head>
+
+<body>
+	<input type="text" id="search">
+	<br>
+	<br>
+	<div id="result">
+		Espelho
+	</div>
+
+<script type="text/javascript">
+var text = document.getElementById("search");
+var result = document.getElementById("result");
+var resultDefaultText = "Input Vazio";
+
+//addEventListener adiciona um evento e a este associa uma função.
+	text.addEventListener("keyup", function(){
+		var value = this.value;
+	//o evento é associaod ao input, logo this.value refere-se ao valor do input.
+		result.innerText = value !== "" ? value : resultDefaultText;
+		
+	})
+ </script>
+</body>
+
+</html>

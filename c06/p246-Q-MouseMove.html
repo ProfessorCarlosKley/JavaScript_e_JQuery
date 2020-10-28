@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body onmousedown="showCoords(event)">
+    <p>A propriedade move do mouse etsá na div. Portanto a propriedade click está no body. Clique na págona para vê-la.
+    </p>
+    <div onmousemove=" myFunction(event)" onmouseout="clearCoor()">
+    </div>
+    <!--descrição de event no comentário de rodapé
+    event é um propriedade de leitura do evento de mouse.-->
+    <p>Passe o mouse sobre o retângulo acima e obtenha as coordenadas do ponteiro do mouse.</p>
+
+    <p>Quando o mouse é movido sobre a div, o elemento p exibirá as coordenadas horizontal e vertical do seu
+        ponteiro do mouse, cujos valores são retornados das propriedades clientX e clientY no
+        Objeto MouseEvent.</p>
+
+    <p id="demo"></p>
+
+    <script>
+
+
+        function myFunction(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            var coor = "Coordenadas: (" + x + "," + y + ")";
+            document.getElementById("demo").innerHTML = coor;
+        }
+
+        function clearCoor() {
+            document.getElementById("demo").innerHTML = "";
+        }
+        /***
+        O clientX é uma propriedade somente de leitura da interface MouseEvent
+        que fornece as coordenadas horizontais dentro da área do aplicativo do
+        cliente em que o evento ocorreu (diferente das coordenadas dentro da
+        página).
+
+        Por exemplo, clicando no canto superior esquerdo da área do
+        cliente sempre irá resultar em um evento de mouse com um valor clientX
+        de 0, independentemente se a página foi rolada horizontalmente.
+        Originalmente, essa propriedade era definida como o número inteiro long.
+        O Módulo de Visualização CSSOM o redefiniu como a fraçãodouble.
+        Veja a seção de compatibilidade do Navegador para detalhes.*/
+
+        //função chamada em body. Veja que em body o parâmetro também é event
+        function showCoords(e) {
+            alert(
+                "clientX value: " + e.clientX + "\n" +
+                "clientY value: " + e.clientY + "\n"
+            );
+        }
+
+    </script>
+    <p>
+
+        “Onde estou?” e “como vim parar aqui?” foram as primeiras perguntas que surgiram na mente confusa daquele jovem
+        de aparentemente vinte anos. Era branco, com cabelos negros e olhos castanhos, vestia uma camisa branca e um
+        short cinza, a roupa que normalmente usava para ir à praia.
+        Ele não conseguia ver nada na escuridão. Entendeu que estava na horizontal e tentou se mexer, mas percebeu que
+        os pulsos e tornozelos estavam acorrentados, parecia que ele estava deitado sobre uma mesa de metal.
+        Estava tremendo por causa do frio que havia no local, o pânico começou a tomar conta do consciente que só
+        encontrava perguntas sem respostas.
+        Pensou em gritar por socorro, mas, antes disso, conseguiu ver algum movimento na escuridão. Um arrepio percorreu
+        sua espinha e ele ficou paralisado.
+        O vulto se aproximou num passo lento, a sombra se tornou uma loira de beleza escultural, vestida apenas com uma
+        lingerie preta.
+        Ela se debruçou sobre ele e o beijou nos lábios. O seu corpo era quente, tinha um perfume adocicado e difícil de
+        distinguir, quase nauseante. O pânico foi substituído por sentimentos menos desesperadores e mais quentes.
+        Ela sentou-se na barriga dele.
+        – O que está acontecendo? – Perguntou o jovem.
+        Mas ela nada respondeu. Pelo contrário, apenas ficou olhando o garoto. Havia algo de maligno naquele meio
+        sorriso e seus olhos verdes pareciam lhe cortar a alma.
+    </p>
+</body>
+
+</html>

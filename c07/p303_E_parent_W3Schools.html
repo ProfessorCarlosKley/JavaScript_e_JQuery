@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .ancestors * {
+      display: block;
+      border: 2px solid lightgrey;
+      color: lightgrey;
+      padding: 5px;
+      margin: 15px;
+    }
+  </style>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("span").parent().css({ "color": "red", "border": "2px solid red" });
+    });
+//busca o primeiro ascendente e quando passamos nele um seletor – como .parent(‘ul’), por exemplo
+//– só retorna o primeiro ascendente se ele fizer match com o seletor (se for uma ul, no caso).
+//Retorna primeiro pai.
+  </script>
+</head>
+
+<body>
+  <h1>SELECIONANDO PAI DE SPAN</h1>
+  <div class="ancestors">
+    <div style="width:500px;">div (great-grandparent)
+      <ul>ul (grandparent)
+        <li>li (direct parent)
+          <span>span</span>
+        </li>
+      </ul>
+    </div>
+
+    <div style="width:500px;">div (grandparent)
+      <p>p (direct parent)
+        <span>span</span>
+      </p>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>----- Verificando a tecla pressionada -----</title>
+	<style>
+		input {
+			width: 300px;
+		}
+
+		div {
+			background-color: brown;
+			color: white;
+			width: 300px;
+			height: 30px;
+			text-align: center;
+			font-family: Arial, Helvetica, sans-serif;
+			padding-top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="text" id="text" placeholder="Digite um valor e pressione enter...">
+	<br><br><br>
+	<div id="result" style="display:none">
+		Tecla ENTER detectada.
+	</div>
+
+	<script type="text/javascript">
+		var text = document.getElementById("text");
+		var result = document.getElementById("result");
+
+		text.addEventListener("keypress", function (evento) {
+			if (evento.keyCode == 13)
+				result.style.display = "block";
+		})
+	</script>
+</body>
+
+</html>

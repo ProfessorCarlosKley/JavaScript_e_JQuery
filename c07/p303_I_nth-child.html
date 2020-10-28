@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("p:nth-child(3)").css("background-color", "yellow");
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1>Selecionando um filho específico com nth-child - Não tem base 0, ou seja, o contador começa em 1</h1>
+
+    <p>Neste exemplo, selecina 3 elemento filho de cada elemento.</p>
+    <p>Aqui estamos selecionando cada elemento que é o terceiro filho de seu pai:</p>
+
+    <div style="border:1px solid;">
+        <span>This is a span element in div</span>
+        <p>The first paragraph in div.</p>
+        <p>The second paragraph in another div (and the 3rd child element in this div).</p>
+        <p>The last paragraph in div.</p>
+    </div><br>
+
+    <div style="border:1px solid;">
+        <p>The first paragraph in another div.</p>
+        <p>The second paragraph in another div.</p>
+        <p>The last paragraph in another div (and the 3rd child element in this div).</p>
+    </div>
+
+    <p>The last paragraph in body.</p>
+
+</body>
+
+</html>

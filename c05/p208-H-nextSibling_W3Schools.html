@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Lista de Exemplo:</p>
+
+
+    <ul>
+        <li id="item1">Café (1º li)</li>
+        <li id="item2">Pão (2º li)</li>
+    </ul>
+
+
+    <p>Clique para obeter o próximo irmão do primeiro item da lista.</p>
+
+    <button onclick="myFunction()">Clique me</button>
+
+    <p>e você adicionar um espaço em branco entre os dois elementos li, o resultado será "indefinido".</p>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("item1").nextSibling.innerHTML;
+            //localiza o elemento item1 e a partir dele seta o próximo, o irmão
+            //item2 com a propriedade nextSibling.
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+
+</body>
+
+</html>
